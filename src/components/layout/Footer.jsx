@@ -1,4 +1,5 @@
 import { siteConfig } from "../../config/site";
+import { servicePages } from "../../data/servicePages";
 import Logo from "../ui/Logo";
 
 export default function Footer() {
@@ -15,6 +16,14 @@ export default function Footer() {
             {siteConfig.navigation.map((item) => (
               <a href={item.href} key={item.href}>
                 {item.label}
+              </a>
+            ))}
+          </div>
+          <div>
+            <strong>Soluções</strong>
+            {servicePages.map((service) => (
+              <a href={service.path} key={service.path}>
+                {service.label}
               </a>
             ))}
           </div>

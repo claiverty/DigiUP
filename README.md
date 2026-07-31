@@ -9,12 +9,16 @@ conversão.
 
 ## Principais recursos
 
-- Página institucional responsiva para desktop, tablet e dispositivos móveis.
+- Página institucional e páginas específicas para cada frente de serviço.
 - Apresentação das soluções e do processo de desenvolvimento da DigiUP.
 - Seção institucional com informações sobre o fundador.
 - FAQ com respostas sobre serviços e contratação.
 - Integração direta com WhatsApp para contato comercial.
 - Metadados para SEO, Open Graph e compartilhamento em redes sociais.
+- HTML pré-renderizado, dados estruturados e sitemap com todas as páginas.
+- Eventos de conversão preparados para integração com Google Tag Manager.
+- Imagens otimizadas em WebP/JPEG e cache prolongado para arquivos estáticos.
+- Cabeçalhos de segurança, política de conteúdo e canal de divulgação responsável.
 - Identidade visual própria com efeitos de liquid glass e animações sutis.
 - Respeito à preferência do usuário por movimento reduzido.
 
@@ -40,9 +44,13 @@ DigiUP/
 │   ├── pages/               # Composição das páginas
 │   ├── styles/
 │   │   ├── layout/          # Estilos estruturais
+│   │   ├── pages/           # Estilos das páginas de serviço
 │   │   └── sections/        # Estilos específicos das seções
+│   ├── utils/               # Recursos compartilhados, como analytics
 │   ├── App.jsx
+│   ├── entry-server.jsx     # Renderização estática para SEO
 │   └── main.jsx
+├── scripts/                 # Geração das páginas estáticas
 ├── index.html
 ├── package.json
 └── vite.config.js
@@ -77,6 +85,12 @@ npm run build
 
 Os arquivos finais serão gerados na pasta `dist`.
 
+O build gera HTML completo para a página inicial e para as rotas:
+
+- `/criacao-de-sites/`
+- `/sistemas-sob-medida/`
+- `/automacoes-e-ia/`
+
 ### Visualizar o build
 
 ```bash
@@ -89,8 +103,17 @@ npm run preview
 - Serviços: `src/data/services.js`
 - Etapas do processo: `src/data/process.js`
 - Perguntas frequentes: `src/data/faqs.js`
+- Conteúdo das páginas de serviço: `src/data/servicePages.js`
+- Metadados e dados estruturados: `src/data/seo.js`
 - Identidade visual e cores: `src/styles/variables.css`
 - Ativos da marca: `public/`
+
+## Segurança na publicação
+
+O build gera `dist/_headers` com Content Security Policy, proteção contra
+iframes, controle de permissões, HSTS e cache de arquivos estáticos. Plataformas
+como Cloudflare Pages e Netlify aplicam esse arquivo automaticamente. Em outros
+provedores, configure os mesmos cabeçalhos no painel ou servidor web.
 
 ---
 

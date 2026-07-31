@@ -1,6 +1,7 @@
 import { siteConfig } from "../../config/site";
 import Arrow from "../ui/Arrow";
 import SectionLabel from "../ui/SectionLabel";
+import { trackLead } from "../../utils/analytics";
 
 export default function ContactSection() {
   return (
@@ -20,8 +21,9 @@ export default function ContactSection() {
           className="button button--light button--large"
           href={siteConfig.whatsapp}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label="Falar com um especialista da DigiUP pelo WhatsApp"
+          onClick={() => trackLead("contact_whatsapp")}
         >
           Falar com um especialista <Arrow />
         </a>

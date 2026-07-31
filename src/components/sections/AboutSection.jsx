@@ -19,11 +19,12 @@ export default function AboutSection() {
           <article className="founder-card" aria-label="Fundador da DigiUP">
             <img
               className="founder-card__avatar"
-              src="/claiverty-avatar.png"
+              src="/claiverty-avatar.webp"
               alt="Claiverty Rodrigues"
               width="48"
               height="48"
               loading="lazy"
+              decoding="async"
             />
             <div className="founder-card__content">
               <h3>Claiverty Rodrigues</h3>
@@ -33,7 +34,7 @@ export default function AboutSection() {
               className="founder-card__link"
               href={siteConfig.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Ver o perfil de Claiverty Rodrigues no LinkedIn"
             >
               <strong aria-hidden="true">in</strong>

@@ -23,7 +23,9 @@ export default function ServicesSection() {
             <span className="service-row__number">{service.number}</span>
             <div className="service-row__title">
               <small>{service.eyebrow}</small>
-              <h3>{service.title}</h3>
+              <h3>
+                <a href={service.href}>{service.title}</a>
+              </h3>
             </div>
             <div className="service-row__body">
               <p>{service.description}</p>
@@ -33,15 +35,19 @@ export default function ServicesSection() {
                 ))}
               </div>
             </div>
-            <span className="service-row__arrow" aria-hidden="true">
-              ↗
-            </span>
+            <a
+              className="service-row__arrow"
+              href={service.href}
+              aria-label={`Conhecer ${service.title}`}
+            >
+              <span aria-hidden="true">↗</span>
+            </a>
           </article>
         ))}
       </div>
 
       <div className="services__action">
-        <a className="button button--light" href="#contato">
+        <a className="button button--light" href="/#contato">
           Encontrar a solução certa <Arrow />
         </a>
       </div>

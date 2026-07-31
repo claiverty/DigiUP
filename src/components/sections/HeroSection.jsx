@@ -1,4 +1,5 @@
 import Arrow from "../ui/Arrow";
+import { trackLead } from "../../utils/analytics";
 
 export default function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function HeroSection() {
 
       <div className="hero__content">
         <h1 className="reveal reveal--1">
-          Tecnologia para negócios
+          Sites e tecnologia
           <em>que querem ir além.</em>
         </h1>
 
@@ -23,7 +24,11 @@ export default function HeroSection() {
         </p>
 
         <div className="hero__actions reveal reveal--3">
-          <a className="button button--light" href="#contato">
+          <a
+            className="button button--light"
+            href="#contato"
+            onClick={() => trackLead("home_hero")}
+          >
             Quero tirar meu projeto do papel <Arrow />
           </a>
           <a className="button button--glass" href="#solucoes">
