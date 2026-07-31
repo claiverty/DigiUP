@@ -1,0 +1,87 @@
+.site-footer {
+  padding: 90px 0 28px;
+  background: var(--black);
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  padding-bottom: 76px;
+}
+
+.footer__top > div:first-child > p {
+  max-width: 330px;
+  margin: 20px 0 0;
+  color: var(--faint);
+  font-size: 14px;
+}
+
+.footer__nav {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 60px;
+}
+
+.footer__nav > div {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__nav strong {
+  margin-bottom: 8px;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.footer__nav a,
+.footer__nav span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer__nav a:hover {
+  color: var(--accent-soft);
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aurora {
+  to {
+    filter: blur(70px) saturate(135%);
+    transform: translateX(-50%) scale(1.06) rotate(2deg);
+  }
+}
+
+@keyframes sheen {
+  48%,
+  100% {
+    transform: translateX(100%);
+  }
+}

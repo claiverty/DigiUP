@@ -1,0 +1,16 @@
+@import "./variables.css";
+@import "./globals.css";
+
+@import "./layout/header.css";
+@import "./layout/footer.css";
+
+@import "./sections/hero.css";
+@import "./sections/challenge.css";
+@import "./sections/services.css";
+@import "./sections/showcase.css";
+@import "./sections/method.css";
+@import "./sections/about.css";
+@import "./sections/faq.css";
+@import "./sections/contact.css";
+
+@import "./responsive.css";
