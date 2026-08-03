@@ -30,7 +30,17 @@ export default function Footer() {
           <div>
             <strong>Contato</strong>
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <span>{siteConfig.location}</span>
+            {siteConfig.socials.map((social) => (
+              <a
+                href={social.href}
+                key={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${social.label} da DigiUP`}
+              >
+                {social.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ export default function AboutSection() {
             </div>
             <a
               className="founder-card__link"
-              href={siteConfig.linkedin}
+              href={siteConfig.founderLinkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Ver o perfil de Claiverty Rodrigues no LinkedIn"

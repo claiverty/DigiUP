@@ -4,7 +4,6 @@ import ContactSection from "../components/sections/ContactSection";
 import Arrow from "../components/ui/Arrow";
 import SectionLabel from "../components/ui/SectionLabel";
 import { siteConfig } from "../config/site";
-import { servicePages } from "../data/servicePages";
 import { trackLead } from "../utils/analytics";
 
 const processSteps = [
@@ -31,8 +30,6 @@ const processSteps = [
 ];
 
 export default function ServicePage({ service }) {
-  const relatedServices = servicePages.filter((item) => item.path !== service.path);
-
   return (
     <>
       <a className="skip-link" href="#conteudo">
@@ -41,7 +38,10 @@ export default function ServicePage({ service }) {
 
       <Header />
 
-      <main id="conteudo" className="service-page">
+      <main
+        id="conteudo"
+        className="service-page service-page--indexed"
+      >
         <section className="service-hero">
           <div className="service-hero__glow" aria-hidden="true" />
           <div className="section-container service-hero__inner">
@@ -88,6 +88,18 @@ export default function ServicePage({ service }) {
                   <li key={benefit}>{benefit}</li>
                 ))}
               </ul>
+              {service.coverage && (
+                <p className="service-overview__coverage">
+                  {service.coverage.text}{" "}
+                  {service.coverage.links.map((link, index) => (
+                    <span key={link.path}>
+                      {index > 0 && " e "}
+                      <a href={link.path}>{link.label}</a>
+                    </span>
+                  ))}
+                  .
+                </p>
+              )}
             </div>
           </div>
         </section>
@@ -155,19 +167,6 @@ export default function ServicePage({ service }) {
                   </summary>
                   <p>{faq.answer}</p>
                 </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="related-services">
-          <div className="section-container related-services__inner">
-            <span>Explore também</span>
-            <div>
-              {relatedServices.map((item) => (
-                <a href={item.path} key={item.path}>
-                  {item.label} <span aria-hidden="true">↗</span>
-                </a>
               ))}
             </div>
           </div>

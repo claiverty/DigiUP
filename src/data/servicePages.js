@@ -14,6 +14,13 @@ export const servicePages = [
       "Ser encontrada por clientes que pesquisam no Google",
       "Concentrar credibilidade, conteúdo e canais de contato",
     ],
+    coverage: {
+      text: "Atendemos empresas em todo o Brasil. Quando o projeto pede uma conversa presencial, também conseguimos atender em",
+      links: [
+        { label: "Brasília, DF", path: "/criacao-de-sites-em-brasilia/" },
+        { label: "Formosa, GO", path: "/criacao-de-sites-em-formosa-go/" },
+      ],
+    },
     deliverables: [
       {
         title: "Site institucional",

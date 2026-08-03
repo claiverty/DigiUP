@@ -155,6 +155,24 @@
   content: "";
 }
 
+.service-overview__coverage {
+  padding: 18px 0 0 20px;
+  margin: 28px 0 0;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.service-overview__coverage a {
+  color: var(--accent-soft);
+  font-weight: 650;
+}
+
+.service-overview__coverage a:hover {
+  color: var(--white);
+}
+
 .service-deliverables {
   background: #060607;
 }
@@ -224,12 +242,13 @@
 
 .service-fit__grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 14px;
 }
 
 .service-fit__panel,
 .service-process {
+  min-width: 0;
   padding: 45px;
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -249,9 +268,9 @@
 
 .service-process li {
   display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 22px;
-  padding: 25px 0;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 16px;
+  padding: 23px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -264,17 +283,18 @@
 
 .service-process h3 {
   margin: -4px 0 0;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 570;
   letter-spacing: -0.035em;
+  line-height: 1.15;
 }
 
 .service-process li p {
   max-width: 450px;
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.62;
 }
 
 .service-faq {
@@ -340,56 +360,43 @@
   line-height: 1.72;
 }
 
-.related-services {
-  padding: 0 0 90px;
-  background: #060607;
+.service-page--indexed .service-hero h1 {
+  max-width: 900px;
+  font-size: clamp(52px, 6.3vw, 86px);
+  letter-spacing: -0.055em;
+  line-height: 0.96;
 }
 
-.related-services__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 30px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.025);
+.service-page--indexed .service-hero h1 em {
+  margin-top: 14px;
+  font-size: 0.72em;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
-.related-services__inner > span {
-  color: var(--faint);
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.service-page--indexed .service-overview h2 {
+  font-size: clamp(40px, 4.3vw, 60px);
+  line-height: 1.03;
 }
 
-.related-services__inner > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.service-page--indexed .service-section-heading h2 {
+  font-size: clamp(44px, 5vw, 66px);
+  line-height: 0.98;
 }
 
-.related-services a {
-  display: flex;
-  gap: 16px;
-  padding: 12px 15px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 650;
-  transition: border-color 180ms ease, color 180ms ease;
+.service-page--indexed .service-deliverables h3 {
+  font-size: 27px;
+  line-height: 1.08;
 }
 
-.related-services a:hover {
-  border-color: rgba(101, 186, 255, 0.45);
-  color: var(--white);
+.service-page--indexed .service-fit h2 {
+  font-size: clamp(36px, 3.5vw, 48px);
+  line-height: 1.04;
 }
 
-.related-services a span {
-  color: var(--accent-soft);
+.service-page--indexed .service-faq h2 {
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1.02;
 }
 
 @media (max-width: 820px) {
@@ -434,6 +441,22 @@
     font-size: 44px;
   }
 
+  .service-page--indexed .service-hero h1 {
+    font-size: clamp(40px, 11vw, 54px);
+    line-height: 1;
+  }
+
+  .service-page--indexed .service-overview h2,
+  .service-page--indexed .service-section-heading h2,
+  .service-page--indexed .service-faq h2 {
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  .service-page--indexed .service-fit h2 {
+    font-size: 34px;
+  }
+
   .service-deliverables__grid {
     grid-template-columns: 1fr;
     margin-top: 52px;
@@ -449,6 +472,16 @@
     padding: 26px;
   }
 
+  .service-process li {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .service-process h3 {
+    font-size: 20px;
+  }
+
   .service-faq__items summary {
     min-height: 90px;
     grid-template-columns: 30px 1fr auto;
@@ -459,8 +492,4 @@
     margin-left: 46px;
   }
 
-  .related-services__inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }

@@ -1,5 +1,7 @@
 import { faqs } from "./faqs.js";
 import { servicePages } from "./servicePages.js";
+import { localPages } from "./localPages.js";
+import { siteConfig } from "../config/site.js";
 
 export const siteUrl = "https://digiuptech.com.br";
 
@@ -12,19 +14,20 @@ const organization = {
   image: `${siteUrl}/og.jpg`,
   description:
     "Tech House especializada em presença digital, criação de sites, sistemas, plataformas e automações.",
-  email: "mailto:contato@digiup.com.br",
+  email: `mailto:${siteConfig.email}`,
   telephone: "+55 61 99863-6443",
   areaServed: "BR",
+  sameAs: siteConfig.socials.map((social) => social.href),
   founder: {
     "@type": "Person",
     name: "Claiverty Rodrigues",
-    sameAs: "https://www.linkedin.com/in/claiverty/",
+    sameAs: siteConfig.founderLinkedin,
   },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
     telephone: "+55 61 99863-6443",
-    email: "contato@digiup.com.br",
+    email: siteConfig.email,
     availableLanguage: "Portuguese",
   },
   knowsAbout: [
@@ -66,6 +69,15 @@ export const seoRoutes = [
     faqs: service.faqs,
     serviceType: service.seo.serviceType,
   })),
+  ...localPages.map((page) => ({
+    path: page.path,
+    title: page.seo.title,
+    description: page.seo.description,
+    ogDescription: page.seo.description,
+    faqs: page.faqs,
+    serviceType: page.seo.serviceType,
+    areaServed: page.seo.areaServed,
+  })),
 ];
 
 export function buildStructuredData(route) {
@@ -99,7 +111,7 @@ export function buildStructuredData(route) {
       name: route.serviceType,
       description: route.description,
       url: pageUrl,
-      areaServed: "BR",
+      areaServed: route.areaServed || "BR",
       provider: { "@id": `${siteUrl}/#organization` },
     });
 

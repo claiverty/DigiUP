@@ -1,4 +1,4 @@
-Contact: mailto:contato@digiup.com.br
+Contact: mailto:contatodigiup@gmail.com
 Canonical: https://digiuptech.com.br/.well-known/security.txt
 Preferred-Languages: pt-BR, en
 Expires: 2027-07-31T23:59:59Z
