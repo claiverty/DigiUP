@@ -11,17 +11,18 @@
 
 .hero::before {
   position: absolute;
-  z-index: -2;
+  z-index: 2;
   inset: 0;
   background:
     linear-gradient(to bottom, transparent 55%, #050506 96%),
     radial-gradient(circle at 50% 38%, rgba(3, 38, 95, 0.34), transparent 53%);
   content: "";
+  pointer-events: none;
 }
 
 .hero__aurora {
   position: absolute;
-  z-index: -3;
+  z-index: 0;
   top: -22%;
   left: 50%;
   width: 1240px;
@@ -39,9 +40,88 @@
   animation: aurora 12s ease-in-out infinite alternate;
 }
 
+.hero__motion {
+  position: absolute;
+  z-index: 1;
+  inset: -16%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__motion::after {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 120deg at 50% 42%,
+    transparent 0deg,
+    rgba(0, 111, 232, 0.03) 70deg,
+    rgba(60, 164, 255, 0.16) 108deg,
+    transparent 148deg,
+    transparent 360deg
+  );
+  content: "";
+  filter: blur(34px);
+  opacity: 0.8;
+  transform-origin: 50% 42%;
+  animation: hero-light-sweep 14s linear infinite;
+  will-change: transform;
+}
+
+.hero__motion span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.86;
+  will-change: transform;
+}
+
+.hero__motion span:nth-child(1) {
+  top: 3%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 111, 232, 0.52) 0,
+    rgba(0, 84, 196, 0.22) 34%,
+    transparent 68%
+  );
+  animation: hero-float-one 8s ease-in-out infinite alternate;
+}
+
+.hero__motion span:nth-child(2) {
+  top: -4%;
+  right: 2%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(
+    circle,
+    rgba(72, 168, 255, 0.4) 0,
+    rgba(0, 65, 174, 0.18) 38%,
+    transparent 70%
+  );
+  animation: hero-float-two 10s ease-in-out -3s infinite alternate;
+}
+
+.hero__motion span:nth-child(3) {
+  bottom: -12%;
+  left: 38%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 132, 255, 0.34) 0,
+    rgba(0, 53, 144, 0.16) 40%,
+    transparent 70%
+  );
+  animation: hero-float-three 9s ease-in-out -5s infinite alternate;
+}
+
 .hero__grain {
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   inset: 0;
   opacity: 0.17;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
@@ -51,7 +131,7 @@
 
 .hero__rings {
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   inset: 0;
   pointer-events: none;
 }
@@ -68,19 +148,78 @@
 .hero__rings i:nth-child(1) {
   width: 420px;
   height: 420px;
+  animation: hero-ring-breathe 8s ease-in-out infinite;
 }
 
 .hero__rings i:nth-child(2) {
   width: 690px;
   height: 690px;
+  animation: hero-ring-breathe 11s ease-in-out -4s infinite;
 }
 
 .hero__rings i:nth-child(3) {
   width: 980px;
   height: 980px;
+  animation: hero-ring-breathe 14s ease-in-out -8s infinite;
+}
+
+@keyframes hero-float-one {
+  0% {
+    transform: translate3d(-16%, -8%, 0) scale(0.92);
+  }
+  55% {
+    transform: translate3d(24%, 18%, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(48%, -4%, 0) scale(1.02);
+  }
+}
+
+@keyframes hero-float-two {
+  0% {
+    transform: translate3d(18%, -10%, 0) scale(1.08);
+  }
+  50% {
+    transform: translate3d(-22%, 20%, 0) scale(0.9);
+  }
+  100% {
+    transform: translate3d(-48%, 4%, 0) scale(1.1);
+  }
+}
+
+@keyframes hero-float-three {
+  0% {
+    transform: translate3d(-24%, 18%, 0) scale(0.9);
+  }
+  50% {
+    transform: translate3d(18%, -22%, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(46%, 8%, 0) scale(1.02);
+  }
+}
+
+@keyframes hero-light-sweep {
+  to {
+    transform: rotate(360deg) scale(1.08);
+  }
+}
+
+@keyframes hero-ring-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.985);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.025);
+  }
 }
 
 .hero__content {
+  position: relative;
+  z-index: 4;
   width: min(920px, 100%);
   margin-top: -20px;
   text-align: center;
@@ -224,6 +363,7 @@
 
 .hero__meta {
   position: absolute;
+  z-index: 4;
   bottom: 63px;
   left: 50%;
   display: flex;
@@ -244,6 +384,7 @@
 
 .scroll-cue {
   position: absolute;
+  z-index: 4;
   right: 34px;
   bottom: 48px;
   display: flex;

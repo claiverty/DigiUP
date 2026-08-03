@@ -124,12 +124,9 @@
     height: 40px;
     padding: 0;
     place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 999px;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.025)),
-      rgba(7, 7, 10, 0.36);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    border: 0;
+    background: transparent;
+    box-shadow: none;
     cursor: pointer;
     color: var(--white);
     list-style: none;
@@ -240,6 +237,15 @@
     width: 660px;
     height: 700px;
     opacity: 0.76;
+  }
+
+  .hero__motion {
+    inset: -10% -45%;
+    opacity: 0.78;
+  }
+
+  .hero__motion span:nth-child(3) {
+    display: none;
   }
 
   .hero h1 {
@@ -470,5 +476,12 @@
 
   .reveal {
     opacity: 1;
+  }
+
+  .scroll-reveal,
+  .scroll-reveal--visible {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
 }

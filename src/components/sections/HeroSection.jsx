@@ -5,6 +5,11 @@ export default function HeroSection() {
   return (
     <section className="hero" id="inicio">
       <div className="hero__aurora" aria-hidden="true" />
+      <div className="hero__motion" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <div className="hero__grain" aria-hidden="true" />
       <div className="hero__rings" aria-hidden="true">
         <i />
