@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "DigiUP",
   email: "contatodigiup@gmail.com",
+  phoneNumber: "+55 (61) 99863-6443",
   founderLinkedin: "https://www.linkedin.com/in/claiverty/",
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/digiuptech/" },

@@ -30,6 +30,7 @@ export default function Footer() {
           <div>
             <strong>Contato</strong>
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a href={siteConfig.whatsapp}>{siteConfig.phoneNumber}</a>
             {siteConfig.socials.map((social) => (
               <a
                 href={social.href}
