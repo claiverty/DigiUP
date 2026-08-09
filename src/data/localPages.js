@@ -1,4 +1,4 @@
-import { normalizePath } from "./servicePages.js";
+import { normalizePath } from "../utils/path.js";
 
 export const localPages = [
   {

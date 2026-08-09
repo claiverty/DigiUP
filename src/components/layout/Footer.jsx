@@ -1,5 +1,6 @@
 import { siteConfig } from "../../config/site";
 import { servicePages } from "../../data/servicePages";
+import { trackLead } from "../../utils/analytics";
 import Logo from "../ui/Logo";
 
 export default function Footer() {
@@ -30,7 +31,14 @@ export default function Footer() {
           <div>
             <strong>Contato</strong>
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <a href={siteConfig.whatsapp}>{siteConfig.phoneNumber}</a>
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackLead("footer_whatsapp")}
+            >
+              {siteConfig.phoneNumber}
+            </a>
             {siteConfig.socials.map((social) => (
               <a
                 href={social.href}

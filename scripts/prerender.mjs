@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -9,7 +8,6 @@ const distDirectory = path.join(projectRoot, "dist");
 const serverEntry = path.join(projectRoot, ".prerender", "entry-server.js");
 const template = await readFile(path.join(distDirectory, "index.html"), "utf8");
 const { render } = await import(pathToFileURL(serverEntry).href);
-const inlineScriptHashes = new Set();
 
 function escapeAttribute(value) {
   return value
@@ -63,14 +61,6 @@ for (const route of seoRoutes) {
     `<div id="root">${markup}</div>`,
   );
   const output = applySeo(renderedTemplate, route);
-  const inlineScripts = output.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi);
-
-  for (const script of inlineScripts) {
-    if (script[1].trim()) {
-      const hash = createHash("sha256").update(script[1]).digest("base64");
-      inlineScriptHashes.add(`'sha256-${hash}'`);
-    }
-  }
 
   const targetDirectory =
     route.path === "/"
@@ -80,49 +70,6 @@ for (const route of seoRoutes) {
   await mkdir(targetDirectory, { recursive: true });
   await writeFile(path.join(targetDirectory, "index.html"), output, "utf8");
 }
-
-const contentSecurityPolicy = [
-  "default-src 'self'",
-  `script-src 'self' ${[...inlineScriptHashes].join(" ")}`,
-  "script-src-attr 'none'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
-  "font-src 'self' data:",
-  "connect-src 'self'",
-  "media-src 'self'",
-  "object-src 'none'",
-  "frame-src 'none'",
-  "worker-src 'none'",
-  "manifest-src 'self'",
-  "base-uri 'self'",
-  "form-action 'none'",
-  "frame-ancestors 'none'",
-  "upgrade-insecure-requests",
-].join("; ");
-
-const securityHeaders = `/*
-  Content-Security-Policy: ${contentSecurityPolicy}
-  Cross-Origin-Opener-Policy: same-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Referrer-Policy: strict-origin-when-cross-origin
-  Strict-Transport-Security: max-age=31536000
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
-
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.svg
-  Cache-Control: public, max-age=604800
-
-/*.jpg
-  Cache-Control: public, max-age=604800
-
-/*.webp
-  Cache-Control: public, max-age=604800
-`;
-
-await writeFile(path.join(distDirectory, "_headers"), securityHeaders, "utf8");
 
 await rm(path.join(projectRoot, ".prerender"), { recursive: true, force: true });
 console.log(`Prerender concluído: ${seoRoutes.length} páginas.`);

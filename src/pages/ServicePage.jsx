@@ -4,30 +4,8 @@ import ContactSection from "../components/sections/ContactSection";
 import Arrow from "../components/ui/Arrow";
 import SectionLabel from "../components/ui/SectionLabel";
 import { siteConfig } from "../config/site";
+import { serviceProcessSteps } from "../data/process";
 import { trackLead } from "../utils/analytics";
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Entender",
-    text: "Mapeamos o contexto, os usuários, o objetivo e as restrições do projeto.",
-  },
-  {
-    number: "02",
-    title: "Direcionar",
-    text: "Definimos prioridades, escopo e o caminho técnico mais coerente.",
-  },
-  {
-    number: "03",
-    title: "Construir",
-    text: "Projetamos e desenvolvemos a solução com validações ao longo do processo.",
-  },
-  {
-    number: "04",
-    title: "Evoluir",
-    text: "Publicamos, acompanhamos o uso e organizamos os próximos movimentos.",
-  },
-];
 
 export default function ServicePage({ service }) {
   return (
@@ -137,7 +115,7 @@ export default function ServicePage({ service }) {
             <div className="service-process">
               <SectionLabel label="Como conduzimos" />
               <ol>
-                {processSteps.map((step) => (
+                {serviceProcessSteps.map((step) => (
                   <li key={step.number}>
                     <span>{step.number}</span>
                     <div>

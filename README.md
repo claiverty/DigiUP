@@ -20,6 +20,7 @@ conversão.
 - Imagens otimizadas em WebP/JPEG e cache prolongado para arquivos estáticos.
 - Cabeçalhos de segurança, política de conteúdo e canal de divulgação responsável.
 - Identidade visual própria com efeitos de liquid glass e animações sutis.
+- Rolagem suave e entradas progressivas de conteúdo durante a navegação.
 - Respeito à preferência do usuário por movimento reduzido.
 
 ## Tecnologias
@@ -41,6 +42,7 @@ DigiUP/
 │   │   └── ui/              # Componentes reutilizáveis
 │   ├── config/              # Informações e links globais
 │   ├── data/                # Serviços, processo e FAQ
+│   ├── hooks/               # Comportamentos de rolagem e animação
 │   ├── pages/               # Composição das páginas
 │   ├── styles/
 │   │   ├── layout/          # Estilos estruturais
@@ -53,6 +55,7 @@ DigiUP/
 ├── scripts/                 # Geração das páginas estáticas
 ├── index.html
 ├── package.json
+├── vercel.json              # Deploy, cache e cabeçalhos de segurança
 └── vite.config.js
 ```
 
@@ -90,6 +93,8 @@ O build gera HTML completo para a página inicial e para as rotas:
 - `/criacao-de-sites/`
 - `/sistemas-sob-medida/`
 - `/automacoes-e-ia/`
+- `/criacao-de-sites-em-formosa-go/`
+- `/criacao-de-sites-em-brasilia/`
 
 ### Visualizar o build
 
@@ -104,16 +109,18 @@ npm run preview
 - Etapas do processo: `src/data/process.js`
 - Perguntas frequentes: `src/data/faqs.js`
 - Conteúdo das páginas de serviço: `src/data/servicePages.js`
+- Conteúdo das páginas regionais: `src/data/localPages.js`
 - Metadados e dados estruturados: `src/data/seo.js`
+- Rolagem e animações de entrada: `src/hooks/`
 - Identidade visual e cores: `src/styles/variables.css`
 - Ativos da marca: `public/`
 
 ## Segurança na publicação
 
-O build gera `dist/_headers` com Content Security Policy, proteção contra
-iframes, controle de permissões, HSTS e cache de arquivos estáticos. Plataformas
-como Cloudflare Pages e Netlify aplicam esse arquivo automaticamente. Em outros
-provedores, configure os mesmos cabeçalhos no painel ou servidor web.
+O arquivo `vercel.json` mantém a configuração usada na publicação: Content
+Security Policy, proteção contra iframes, controle de permissões, HSTS e cache
+prolongado para arquivos estáticos. O domínio pode permanecer sob o proxy da
+Cloudflare sem retirar essas proteções da resposta da Vercel.
 
 ---
 

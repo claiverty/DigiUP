@@ -1,3 +1,5 @@
+import { normalizePath } from "../utils/path.js";
+
 export const servicePages = [
   {
     path: "/criacao-de-sites/",
@@ -211,11 +213,6 @@ export const servicePages = [
     },
   },
 ];
-
-export function normalizePath(path = "/") {
-  const cleanPath = path.split("?")[0].split("#")[0] || "/";
-  return cleanPath === "/" ? "/" : `${cleanPath.replace(/\/+$/, "")}/`;
-}
 
 export function getServicePage(path) {
   const normalizedPath = normalizePath(path);

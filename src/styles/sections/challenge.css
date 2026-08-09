@@ -99,3 +99,10 @@
   font-weight: 800;
   letter-spacing: -0.12em;
 }
+
+@keyframes sheen {
+  48%,
+  100% {
+    transform: translateX(100%);
+  }
+}

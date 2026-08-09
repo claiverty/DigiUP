@@ -14,8 +14,8 @@ export default function ContactSection() {
           <em>próximo movimento no mundo?</em>
         </h2>
         <p>
-          Sua empresa ainda não tem site ou precisa evoluir sua presença digital?
-          Conte seu momento e nós indicamos o próximo passo.
+          Precisa criar sua presença digital, organizar uma operação ou automatizar
+          processos? Conte seu momento e nós indicamos o próximo passo.
         </p>
         <a
           className="button button--light button--large"

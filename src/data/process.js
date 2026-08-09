@@ -24,3 +24,26 @@ export const processSteps = [
       "Publicamos, medimos e refinamos para que o produto continue relevante enquanto a operação cresce.",
   },
 ];
+
+export const serviceProcessSteps = [
+  {
+    number: "01",
+    title: "Entender",
+    text: "Mapeamos o contexto, os usuários, o objetivo e as restrições do projeto.",
+  },
+  {
+    number: "02",
+    title: "Direcionar",
+    text: "Definimos prioridades, escopo e o caminho técnico mais coerente.",
+  },
+  {
+    number: "03",
+    title: "Construir",
+    text: "Projetamos e desenvolvemos a solução com validações ao longo do processo.",
+  },
+  {
+    number: "04",
+    title: "Evoluir",
+    text: "Publicamos, acompanhamos o uso e organizamos os próximos movimentos.",
+  },
+];

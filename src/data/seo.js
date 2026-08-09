@@ -3,7 +3,7 @@ import { servicePages } from "./servicePages.js";
 import { localPages } from "./localPages.js";
 import { siteConfig } from "../config/site.js";
 
-export const siteUrl = "https://digiuptech.com.br";
+export const siteUrl = siteConfig.url;
 
 const organization = {
   "@type": "Organization",
@@ -15,7 +15,7 @@ const organization = {
   description:
     "Tech House especializada em presença digital, criação de sites, sistemas, plataformas e automações.",
   email: `mailto:${siteConfig.email}`,
-  telephone: "+55 61 99863-6443",
+  telephone: siteConfig.phoneE164,
   areaServed: "BR",
   sameAs: siteConfig.socials.map((social) => social.href),
   founder: {
@@ -26,7 +26,7 @@ const organization = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    telephone: "+55 61 99863-6443",
+    telephone: siteConfig.phoneE164,
     email: siteConfig.email,
     availableLanguage: "Portuguese",
   },
