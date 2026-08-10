@@ -19,7 +19,11 @@ export default function HeroSection() {
 
       <div className="hero__content">
         <h1 className="reveal reveal--1">
-          Sites e tecnologia
+          <span>
+            Sites e Tecnologia
+            <br />
+            para Negócios
+          </span>
           <em>que querem ir além.</em>
         </h1>
 
