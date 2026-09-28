@@ -230,7 +230,6 @@
 
 @keyframes aurora {
   to {
-    filter: blur(70px) saturate(135%);
     transform: translateX(-50%) scale(1.06) rotate(2deg);
   }
 }
