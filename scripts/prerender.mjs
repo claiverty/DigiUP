@@ -71,5 +71,43 @@ for (const route of seoRoutes) {
   await writeFile(path.join(targetDirectory, "index.html"), output, "utf8");
 }
 
+const sitemapNamespace = "http://www.sitemaps.org/schemas/sitemap/0.9";
+const sitemapGroups = ["pages", "services", "locations"];
+const generatedSitemaps = [];
+
+for (const group of sitemapGroups) {
+  const routes = seoRoutes.filter((route) => route.sitemapGroup === group);
+  if (!routes.length) continue;
+
+  const entries = routes
+    .map((route) => {
+      const pageUrl = route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}`;
+      return `  <url>\n    <loc>${pageUrl}</loc>\n  </url>`;
+    })
+    .join("\n");
+  const sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    `<urlset xmlns="${sitemapNamespace}">`,
+    entries,
+    "</urlset>",
+    "",
+  ].join("\n");
+  const filename = `sitemap-${group}.xml`;
+  await writeFile(path.join(distDirectory, filename), sitemap, "utf8");
+  generatedSitemaps.push(filename);
+}
+
+const sitemapIndexEntries = generatedSitemaps
+  .map((filename) => `  <sitemap>\n    <loc>${siteUrl}/${filename}</loc>\n  </sitemap>`)
+  .join("\n");
+const sitemapIndex = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  `<sitemapindex xmlns="${sitemapNamespace}">`,
+  sitemapIndexEntries,
+  "</sitemapindex>",
+  "",
+].join("\n");
+await writeFile(path.join(distDirectory, "sitemap.xml"), sitemapIndex, "utf8");
+
 await rm(path.join(projectRoot, ".prerender"), { recursive: true, force: true });
 console.log(`Prerender concluído: ${seoRoutes.length} páginas.`);

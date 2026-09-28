@@ -51,11 +51,12 @@ const website = {
 
 const homeRoute = {
   path: "/",
-  title: "DigiUP | Criação de Sites, Sistemas e Automações",
+  sitemapGroup: "pages",
+  title: "DigiUP | Sites, Sistemas e Automações para Empresas",
   description:
-    "A DigiUP cria sites profissionais, sistemas, plataformas e automações para empresas que querem fortalecer sua presença digital e crescer com tecnologia.",
+    "Criação de sites profissionais, sistemas sob medida e automações com IA para empresas de todo o Brasil. Tecnologia DigiUP para sua empresa crescer.",
   ogDescription:
-    "Sites profissionais, sistemas, plataformas e automações para fortalecer a presença digital e o crescimento da sua empresa.",
+    "Sites profissionais, sistemas sob medida e automações com IA para empresas de todo o Brasil.",
   faqs,
 };
 
@@ -63,6 +64,7 @@ export const seoRoutes = [
   homeRoute,
   ...servicePages.map((service) => ({
     path: service.path,
+    sitemapGroup: "services",
     title: service.seo.title,
     description: service.seo.description,
     ogDescription: service.seo.description,
@@ -71,6 +73,7 @@ export const seoRoutes = [
   })),
   ...localPages.map((page) => ({
     path: page.path,
+    sitemapGroup: "locations",
     title: page.seo.title,
     description: page.seo.description,
     ogDescription: page.seo.description,

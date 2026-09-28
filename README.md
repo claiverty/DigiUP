@@ -111,6 +111,7 @@ npm run preview
 - Conteúdo das páginas de serviço: `src/data/servicePages.js`
 - Conteúdo das páginas regionais: `src/data/localPages.js`
 - Metadados e dados estruturados: `src/data/seo.js`
+- Grupos dos sitemaps: cada rota em `src/data/seo.js` recebe um `sitemapGroup` (`pages`, `services` ou `locations`). O build gera os arquivos XML e o índice `/sitemap.xml` a partir dessas rotas.
 - Rolagem e animações de entrada: `src/hooks/`
 - Identidade visual e cores: `src/styles/variables.css`
 - Ativos da marca: `public/`

@@ -1,10 +1,10 @@
-const phoneE164 = "+5561998636443";
+const phoneE164 = "+5561996419441";
 
 export const siteConfig = {
   name: "DigiUP",
   url: "https://digiuptech.com.br",
   email: "contatodigiup@gmail.com",
-  phoneNumber: "+55 (61) 99863-6443",
+  phoneNumber: "+55 (61) 99641-9441",
   phoneE164,
   founderLinkedin: "https://www.linkedin.com/in/claiverty/",
   socials: [

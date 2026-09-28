@@ -70,9 +70,9 @@ export const servicePages = [
       },
     ],
     seo: {
-      title: "Criação de Sites Profissionais para Empresas | DigiUP",
+      title: "Criação de Sites para Empresas | DigiUP",
       description:
-        "Criação de sites institucionais e landing pages profissionais para empresas que querem fortalecer sua presença digital e gerar novas oportunidades.",
+        "Sites institucionais e landing pages para empresas que querem fortalecer sua presença digital, apresentar seus serviços e gerar oportunidades.",
       serviceType: "Criação de sites profissionais",
     },
   },
@@ -138,9 +138,9 @@ export const servicePages = [
       },
     ],
     seo: {
-      title: "Desenvolvimento de Sistemas Sob Medida | DigiUP",
+      title: "Sistemas Sob Medida para Empresas | DigiUP",
       description:
-        "Desenvolvimento de sistemas sob medida, plataformas web, painéis e integrações para organizar processos e apoiar o crescimento da sua empresa.",
+        "Desenvolvimento de sistemas web sob medida, plataformas e integrações para organizar processos e apoiar o crescimento da sua empresa.",
       serviceType: "Desenvolvimento de sistemas sob medida",
     },
   },
@@ -206,9 +206,9 @@ export const servicePages = [
       },
     ],
     seo: {
-      title: "Automação de Processos e Inteligência Artificial | DigiUP",
+      title: "Automação de Processos e IA para Empresas | DigiUP",
       description:
-        "Automações, integrações e agentes de IA para reduzir tarefas manuais, conectar ferramentas e tornar a operação da sua empresa mais eficiente.",
+        "Automatize processos, conecte ferramentas e aplique inteligência artificial para reduzir tarefas manuais e tornar sua operação mais eficiente.",
       serviceType: "Automação de processos e inteligência artificial",
     },
   },
