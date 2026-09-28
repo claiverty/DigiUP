@@ -1,6 +1,7 @@
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import AboutSection from "../components/sections/AboutSection";
+import CaseStudySection from "../components/sections/CaseStudySection";
 import ChallengeSection from "../components/sections/ChallengeSection";
 import ContactSection from "../components/sections/ContactSection";
 import ConceptCasesSection from "../components/sections/ConceptCasesSection";
@@ -24,6 +25,7 @@ export default function Home() {
         <ChallengeSection />
         <ServicesSection />
         <ShowcaseSection />
+        <CaseStudySection />
         <ConceptCasesSection />
         <MethodSection />
         <AboutSection />

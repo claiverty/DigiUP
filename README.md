@@ -95,6 +95,7 @@ O build gera HTML completo para a página inicial e para as rotas:
 - `/automacoes-e-ia/`
 - `/criacao-de-sites-em-formosa-go/`
 - `/criacao-de-sites-em-brasilia/`
+- `/criacao-de-sites-em-sao-paulo-sp/`
 
 ### Visualizar o build
 
@@ -110,6 +111,7 @@ npm run preview
 - Perguntas frequentes: `src/data/faqs.js`
 - Conteúdo das páginas de serviço: `src/data/servicePages.js`
 - Conteúdo das páginas regionais: `src/data/localPages.js`
+- Portfólio de projetos publicados: `src/data/projects.js`
 - Metadados e dados estruturados: `src/data/seo.js`
 - Grupos dos sitemaps: cada rota em `src/data/seo.js` recebe um `sitemapGroup` (`pages`, `services` ou `locations`). O build gera os arquivos XML e o índice `/sitemap.xml` a partir dessas rotas.
 - Rolagem e animações de entrada: `src/hooks/`

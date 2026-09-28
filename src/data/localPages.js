@@ -1,72 +1,113 @@
 import { normalizePath } from "../utils/path.js";
 
+const rideGoiasCities = [
+  "Abadiânia",
+  "Água Fria de Goiás",
+  "Águas Lindas de Goiás",
+  "Alexânia",
+  "Alto Paraíso de Goiás",
+  "Alvorada do Norte",
+  "Barro Alto",
+  "Cabeceiras",
+  "Cavalcante",
+  "Cidade Ocidental",
+  "Cocalzinho de Goiás",
+  "Corumbá de Goiás",
+  "Cristalina",
+  "Flores de Goiás",
+  "Formosa",
+  "Goianésia",
+  "Luziânia",
+  "Mimoso de Goiás",
+  "Niquelândia",
+  "Novo Gama",
+  "Padre Bernardo",
+  "Pirenópolis",
+  "Planaltina",
+  "Santo Antônio do Descoberto",
+  "São João d’Aliança",
+  "Simolândia",
+  "Valparaíso de Goiás",
+  "Vila Boa",
+  "Vila Propício",
+];
+
+const sharedDeliverables = [
+  {
+    title: "Sites e plataformas web",
+    text: "Experiências digitais responsivas para apresentar a empresa, produtos e serviços com clareza.",
+  },
+  {
+    title: "Sistemas sob medida",
+    text: "Painéis e aplicações para organizar fluxos, informações e tarefas próprias da operação.",
+  },
+  {
+    title: "Automações e IA",
+    text: "Integrações e automações planejadas conforme os processos e ferramentas do negócio.",
+  },
+  {
+    title: "SEO técnico e estrutura de conteúdo",
+    text: "Páginas com metadados, hierarquia e conteúdo organizados para pessoas e mecanismos de busca.",
+  },
+];
+
+const sharedIdealFor = [
+  "Empresas que precisam apresentar melhor seus serviços na internet",
+  "Negócios que querem organizar uma operação em um sistema próprio",
+  "Equipes que buscam automatizar tarefas repetitivas",
+  "Empresas que precisam renovar um site ou produto digital existente",
+];
+
+function makeFaqs(city) {
+  return [
+    {
+      question: `A DigiUP atende somente empresas de ${city}?`,
+      answer:
+        "Não. O atendimento é remoto e disponível para empresas de qualquer cidade do Brasil. O escopo e o processo não mudam conforme a localidade.",
+    },
+    {
+      question: "Que tipo de projeto a DigiUP desenvolve?",
+      answer:
+        "Sites e plataformas web, sistemas sob medida e automações. A solução é definida depois de entender os objetivos e o fluxo de trabalho da empresa.",
+    },
+    {
+      question: "Vocês garantem que o site vai ficar no topo do Google?",
+      answer:
+        "Não existe garantia de posição orgânica. A DigiUP prepara uma base técnica e de conteúdo, mas o resultado depende também da concorrência, da autoridade do domínio e do tempo de evolução do site.",
+    },
+    {
+      question: "Como começa um projeto?",
+      answer:
+        "Começamos entendendo o objetivo, o público, o conteúdo disponível e as integrações necessárias. Depois apresentamos escopo, etapas e prazo para aprovação.",
+    },
+  ];
+}
+
 export const localPages = [
   {
     path: "/criacao-de-sites-em-formosa-go/",
-    label: "Sites em Formosa, GO",
-    title: "Criação de sites",
-    titleAccent: "em Formosa, Goiás.",
+    label: "Tecnologia para empresas em Formosa, GO",
+    title: "Sites, sistemas e automações",
+    titleAccent: "para Formosa, Goiás.",
     lead:
-      "Atendemos empresas em todo o Brasil e, em Formosa e região, também podemos combinar encontros presenciais. Criamos sites profissionais para apresentar serviços com clareza e gerar novos contatos.",
-    overviewTitle: "Sua empresa em Formosa precisa aparecer onde seus clientes procuram.",
+      "A DigiUP desenvolve sites, sistemas sob medida e automações para empresas em Formosa e em todo o Brasil. Atendimento remoto, com o mesmo escopo de soluções em qualquer localidade.",
+    overviewTitle: "Sua presença digital pode fazer mais do que apresentar a empresa.",
     overview:
-      "Antes de entrar em contato, clientes pesquisam, comparam opções e procuram sinais de confiança. A DigiUP cria uma presença digital própria para explicar o valor da sua empresa, organizar seus serviços e facilitar o contato de pessoas em Formosa e região.",
+      "Um site pode divulgar produtos e serviços; um sistema pode organizar tarefas da equipe; e uma automação pode conectar etapas do trabalho. A DigiUP planeja cada projeto conforme a necessidade do negócio. Em Formosa, o Comercial Sagarana é um exemplo de site público conectado a um painel administrativo para ofertas e vendas.",
     benefits: [
-      "Fortalecer a presença digital em Formosa e região",
-      "Apresentar serviços com clareza e credibilidade",
-      "Transformar pesquisas locais em contatos pelo WhatsApp",
+      "Apresentar serviços, produtos e diferenciais com clareza",
+      "Organizar tarefas e informações em ferramentas digitais próprias",
+      "Facilitar o contato de clientes por canais já usados pela empresa",
     ],
-    deliverables: [
-      {
-        title: "Site institucional",
-        text: "Uma estrutura profissional para apresentar a empresa, os serviços, diferenciais e formas de contato.",
-      },
-      {
-        title: "Páginas de serviço",
-        text: "Conteúdo organizado para responder às principais dúvidas de quem procura sua solução.",
-      },
-      {
-        title: "Base de SEO local",
-        text: "Estrutura técnica e conteúdo preparados para buscas relacionadas a Formosa e à sua área de atuação.",
-      },
-      {
-        title: "Contato integrado",
-        text: "WhatsApp, formulários e chamadas para ação posicionados para facilitar novas conversas comerciais.",
-      },
-    ],
-    idealFor: [
-      "Empresas de Formosa que ainda não possuem site",
-      "Prestadores de serviço que dependem apenas de redes sociais",
-      "Negócios locais que crescem principalmente por indicação",
-      "Empresas com site antigo, lento ou pouco convincente",
-    ],
-    faqs: [
-      {
-        question: "A DigiUP atende apenas empresas de Formosa?",
-        answer:
-          "Não. Atendemos empresas de todo o Brasil. Formosa e região estão entre as localidades onde também conseguimos combinar atendimento presencial quando isso fizer sentido para o projeto.",
-      },
-      {
-        question: "O site pode aparecer nas buscas por serviços em Formosa?",
-        answer:
-          "O projeto inclui uma base técnica e editorial de SEO local. Isso ajuda o Google a compreender o serviço e a região atendida, mas posicionamento orgânico não é imediato nem pode ser garantido, pois também depende de concorrência, autoridade e evolução do conteúdo.",
-      },
-      {
-        question: "Vocês ajudam a organizar os textos e serviços do site?",
-        answer:
-          "Sim. Estruturamos as páginas e orientamos a mensagem para que visitantes entendam rapidamente o que a empresa oferece, para quem o serviço é indicado e como entrar em contato.",
-      },
-      {
-        question: "Quanto tempo leva para criar o site?",
-        answer:
-          "O prazo depende da quantidade de páginas, do conteúdo e das integrações necessárias. Depois do diagnóstico, apresentamos um escopo com etapas e prazo definidos.",
-      },
-    ],
+    deliverables: sharedDeliverables,
+    idealFor: sharedIdealFor,
+    faqs: makeFaqs("Formosa"),
     seo: {
-      title: "Criação de Sites em Formosa, GO | DigiUP",
+      title: "Sites, Sistemas e Automações em Formosa, GO | DigiUP",
       description:
-        "Criação de sites profissionais em Formosa, Goiás, para empresas e prestadores de serviço que querem fortalecer a presença digital e gerar novos contatos.",
-      serviceType: "Criação de sites em Formosa, Goiás",
+        "Sites, sistemas sob medida e automações para empresas em Formosa, GO. Veja o projeto do Comercial Sagarana e conheça o atendimento remoto da DigiUP.",
+      serviceType:
+        "Sites, sistemas sob medida e automações para empresas em Formosa, Goiás",
       areaServed: {
         "@type": "City",
         name: "Formosa",
@@ -76,70 +117,42 @@ export const localPages = [
   },
   {
     path: "/criacao-de-sites-em-brasilia/",
-    label: "Sites em Brasília, DF",
-    title: "Criação de sites",
-    titleAccent: "em Brasília, DF.",
+    label: "Tecnologia para empresas em Brasília e no Entorno",
+    title: "Sites, sistemas e automações",
+    titleAccent: "para Brasília e região.",
     lead:
-      "Atendemos empresas em todo o Brasil e, em Brasília e no DF, também podemos combinar encontros presenciais. Criamos sites profissionais para comunicar valor e gerar oportunidades no ambiente digital.",
-    overviewTitle: "Em um mercado competitivo, confiança começa antes da primeira conversa.",
+      "A DigiUP desenvolve sites, sistemas sob medida e automações para empresas em Brasília, no Entorno de Goiás e em todo o Brasil. Atendimento remoto, com o mesmo escopo de soluções em qualquer localidade.",
+    overviewTitle: "Escolha a solução a partir da necessidade da operação.",
     overview:
-      "Quem procura uma empresa em Brasília costuma avaliar presença digital, clareza e credibilidade antes de entrar em contato. Criamos sites rápidos, responsivos e orientados à conversão para posicionar sua empresa de forma profissional e tornar o próximo passo mais simples.",
+      "Da presença digital à organização de processos internos, cada projeto começa pelo objetivo da empresa. O DigiTicket, plataforma desenvolvida em Brasília, reúne publicação de eventos, reservas, ingressos digitais e validação de entrada em um fluxo full-stack.",
     benefits: [
-      "Construir uma presença digital profissional em Brasília",
-      "Explicar serviços complexos de forma simples e objetiva",
-      "Gerar contatos qualificados por WhatsApp ou formulário",
+      "Explicar a oferta da empresa e abrir caminhos simples para contato",
+      "Transformar processos internos em sistemas adequados ao fluxo do time",
+      "Integrar ferramentas e reduzir tarefas manuais com automações",
     ],
-    deliverables: [
-      {
-        title: "Site institucional",
-        text: "Páginas planejadas para apresentar a empresa, os serviços, diferenciais e canais comerciais.",
+    deliverables: sharedDeliverables,
+    idealFor: sharedIdealFor,
+    faqs: makeFaqs("Brasília"),
+    areaCoverage: {
+      title: "Atendimento em Brasília e nos municípios goianos da RIDE-DF.",
+      text:
+        "O trabalho é remoto e está disponível em todos os 29 municípios goianos que integram a Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE-DF). Também atendemos empresas de outras regiões do país. A lista abaixo segue a composição oficial publicada pela Sudeco. Veja também o",
+      link: {
+        href: "/criacao-de-sites-em-formosa-go/",
+        label: "projeto realizado para o Comercial Sagarana, em Formosa",
       },
-      {
-        title: "Landing pages",
-        text: "Páginas focadas em campanhas, serviços específicos e geração de oportunidades.",
+      source: {
+        href: "https://www.gov.br/sudeco/pt-br/assuntos/ride-df",
+        label: "Consultar a lista oficial da RIDE-DF",
       },
-      {
-        title: "Base de SEO local",
-        text: "Metadados, estrutura semântica e conteúdo preparados para buscas relevantes em Brasília e no DF.",
-      },
-      {
-        title: "Experiência responsiva",
-        text: "Navegação clara e rápida em celular, tablet e computador, com atenção especial às ações de contato.",
-      },
-    ],
-    idealFor: [
-      "Empresas de Brasília que ainda não possuem site",
-      "Escritórios e consultorias que precisam transmitir confiança",
-      "Prestadores de serviço que querem depender menos de indicações",
-      "Negócios com um site antigo ou sem estratégia de conversão",
-    ],
-    faqs: [
-      {
-        question: "A DigiUP atende apenas empresas de Brasília e do DF?",
-        answer:
-          "Não. Atendemos empresas de todo o Brasil. Brasília e o Distrito Federal estão entre as regiões onde também conseguimos combinar atendimento presencial quando isso beneficiar o projeto.",
-      },
-      {
-        question: "O site já vem preparado para buscas locais em Brasília?",
-        answer:
-          "Sim. A entrega inclui a base técnica de SEO local e uma estrutura de conteúdo que ajuda os mecanismos de busca a compreender os serviços e a região atendida. O crescimento das posições acontece de forma gradual e depende também da concorrência e da autoridade do negócio.",
-      },
-      {
-        question: "É possível criar páginas para diferentes serviços da empresa?",
-        answer:
-          "Sim. Podemos criar uma arquitetura com páginas próprias para cada serviço, o que melhora a clareza para o visitante e permite trabalhar buscas mais específicas sem concentrar todas as informações em uma única página.",
-      },
-      {
-        question: "O site pode ser integrado ao WhatsApp e a formulários?",
-        answer:
-          "Sim. Planejamos os pontos de contato conforme a jornada do visitante e podemos integrar WhatsApp, formulários e outras ferramentas compatíveis com a operação comercial da empresa.",
-      },
-    ],
+      cities: rideGoiasCities,
+    },
     seo: {
-      title: "Criação de Sites em Brasília, DF | DigiUP",
+      title: "Sites, Sistemas e Automações em Brasília | DigiUP",
       description:
-        "Criação de sites profissionais em Brasília para empresas, escritórios e prestadores de serviço que querem fortalecer sua presença digital e gerar oportunidades.",
-      serviceType: "Criação de sites em Brasília, Distrito Federal",
+        "Sites, sistemas sob medida e automações para empresas em Brasília e no Entorno de Goiás. Conheça o DigiTicket e o atendimento remoto da DigiUP em todo o Brasil.",
+      serviceType:
+        "Sites, sistemas sob medida e automações para empresas em Brasília e no Entorno",
       areaServed: {
         "@type": "City",
         name: "Brasília",
@@ -147,6 +160,37 @@ export const localPages = [
           "@type": "AdministrativeArea",
           name: "Distrito Federal",
         },
+      },
+    },
+  },
+  {
+    path: "/criacao-de-sites-em-sao-paulo-sp/",
+    label: "Tecnologia para empresas em São Paulo, SP",
+    title: "Sites, sistemas e automações",
+    titleAccent: "para São Paulo, SP.",
+    lead:
+      "A DigiUP desenvolve sites, sistemas sob medida e automações para empresas em São Paulo e em todo o Brasil. Atendimento remoto, com o mesmo escopo de soluções em qualquer localidade.",
+    overviewTitle: "Uma experiência digital bem planejada conecta pessoas e processos.",
+    overview:
+      "A DigiUP trabalha da interface pública à lógica que sustenta o produto. O Ballon d’Or SPFC, desenvolvido para a comunidade do Discord Tricolor, organiza indicações, seleção de candidatos, votação por edição e publicação do histórico da premiação.",
+    benefits: [
+      "Apresentar produtos e serviços com uma experiência clara",
+      "Reunir etapas e regras de negócio em uma plataforma própria",
+      "Planejar integrações e fluxos digitais adequados a cada projeto",
+    ],
+    deliverables: sharedDeliverables,
+    idealFor: sharedIdealFor,
+    faqs: makeFaqs("São Paulo"),
+    seo: {
+      title: "Sites, Sistemas e Automações em São Paulo | DigiUP",
+      description:
+        "Sites, sistemas sob medida e automações para empresas em São Paulo, SP. Conheça o projeto full-stack Ballon d’Or SPFC, desenvolvido pela DigiUP.",
+      serviceType:
+        "Sites, sistemas sob medida e automações para empresas em São Paulo, SP",
+      areaServed: {
+        "@type": "City",
+        name: "São Paulo",
+        containedInPlace: { "@type": "AdministrativeArea", name: "São Paulo" },
       },
     },
   },

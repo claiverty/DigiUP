@@ -82,6 +82,42 @@ export default function ServicePage({ service }) {
           </div>
         </section>
 
+        {service.areaCoverage?.cities?.length > 0 && (
+          <section className="service-coverage section" aria-labelledby="service-coverage-title">
+            <div className="section-container">
+              <SectionLabel label="Área de atendimento" />
+              <div className="service-coverage__intro">
+                <h2 id="service-coverage-title">{service.areaCoverage.title}</h2>
+                <p>
+                  {service.areaCoverage.text}{" "}
+                  {service.areaCoverage.link && (
+                    <>
+                      <a href={service.areaCoverage.link.href}>
+                        {service.areaCoverage.link.label}
+                      </a>.
+                    </>
+                  )}
+                </p>
+                {service.areaCoverage.source && (
+                  <a
+                    className="service-coverage__source"
+                    href={service.areaCoverage.source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {service.areaCoverage.source.label}
+                  </a>
+                )}
+              </div>
+              <ul className="service-coverage__cities">
+                {service.areaCoverage.cities.map((city) => (
+                  <li key={city}>{city}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         <section className="service-deliverables section" id="entregas">
           <div className="section-container service-section-heading">
             <SectionLabel label="Entregas" />

@@ -104,6 +104,77 @@
   background: #08090c;
 }
 
+.service-coverage {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(0, 84, 218, 0.1), transparent 30%),
+    #08090c;
+}
+
+.service-coverage .section-label {
+  margin-bottom: 26px;
+}
+
+.service-coverage__intro {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 72px;
+  align-items: end;
+}
+
+.service-coverage__intro h2 {
+  max-width: 710px;
+  margin: 0;
+  font-size: clamp(36px, 4.3vw, 60px);
+  line-height: 1.02;
+}
+
+.service-coverage__intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.service-coverage__intro a {
+  color: var(--accent-soft);
+  font-weight: 650;
+}
+
+.service-coverage__intro a:hover {
+  color: var(--white);
+}
+
+.service-coverage__source {
+  display: inline-flex;
+  min-height: 44px;
+  grid-column: 2;
+  align-items: center;
+  margin-top: 10px;
+  color: var(--accent-soft);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.service-coverage__cities {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0;
+  margin: 40px 0 0;
+  list-style: none;
+}
+
+.service-coverage__cities li {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
 .service-overview__grid {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
@@ -402,9 +473,18 @@
 @media (max-width: 820px) {
   .service-overview__grid,
   .service-fit__grid,
-  .service-faq__grid {
+  .service-faq__grid,
+  .service-coverage__intro {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .service-coverage__cities {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .service-coverage__source {
+    grid-column: auto;
   }
 
   .service-overview__copy {
@@ -424,6 +504,10 @@
 
   .service-hero__lead {
     font-size: 15px;
+  }
+
+  .service-coverage__cities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .service-hero__actions {
