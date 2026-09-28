@@ -6,7 +6,17 @@ import { buildStructuredData, seoRoutes, siteUrl } from "../src/data/seo.js";
 const projectRoot = process.cwd();
 const distDirectory = path.join(projectRoot, "dist");
 const serverEntry = path.join(projectRoot, ".prerender", "entry-server.js");
-const template = await readFile(path.join(distDirectory, "index.html"), "utf8");
+const builtTemplate = await readFile(path.join(distDirectory, "index.html"), "utf8");
+const stylesheetTags = builtTemplate.match(/<link rel="stylesheet"[^>]*>/g) || [];
+// Make the CSS discoverable before the metadata and structured data on every route.
+const template = stylesheetTags.length
+  ? builtTemplate
+      .replace(/<link rel="stylesheet"[^>]*>/g, "")
+      .replace(
+        /(<meta name="viewport"[^>]*>)/i,
+        `$1\n    ${stylesheetTags.join("\n    ")}`,
+      )
+  : builtTemplate;
 const { render } = await import(pathToFileURL(serverEntry).href);
 
 function escapeAttribute(value) {

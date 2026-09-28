@@ -3,7 +3,7 @@ export const caseStudies = [
     id: "ballondor",
     name: "Ballon d’Or SPFC",
     eyebrow: "Comunidade esportiva · São Paulo, SP",
-    image: "/projects/ballondor-site.png",
+    image: "/projects/ballondor-site-1400.jpg",
     imageAlt: "Página inicial do Ballon d’Or SPFC com identidade azul e dourada.",
     title: "Uma premiação construída pela comunidade SPFC.",
     description:
@@ -18,7 +18,7 @@ export const caseStudies = [
     id: "sagarana",
     name: "Comercial Sagarana",
     eyebrow: "Comércio local · Formosa, GO",
-    image: "/projects/comercial-sagarana-site.png",
+    image: "/projects/comercial-sagarana-site-1400.jpg",
     imageAlt: "Página inicial da Comercial Sagarana com foto da loja e chamada de ofertas.",
     imagePosition: "44% center",
     title: "Da vitrine ao controle financeiro da loja.",
@@ -34,7 +34,7 @@ export const caseStudies = [
     id: "digiticket",
     name: "DigiTicket",
     eyebrow: "Eventos e ingressos · Brasília, DF",
-    image: "/projects/digiticket-site.png",
+    image: "/projects/digiticket-site-1400.jpg",
     imageAlt: "Página inicial da DigiTicket com busca e destaques de eventos.",
     title: "Da descoberta do evento à entrada, em um só lugar.",
     description:

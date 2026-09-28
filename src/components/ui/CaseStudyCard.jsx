@@ -17,6 +17,9 @@ export default function CaseStudyCard({
             src={image}
             alt={imageAlt}
             loading="lazy"
+            decoding="async"
+            width="1400"
+            height="808"
             style={imagePosition ? { objectPosition: imagePosition } : undefined}
           />
         </div>
