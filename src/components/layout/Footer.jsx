@@ -1,5 +1,6 @@
 import { siteConfig } from "../../config/site";
 import { servicePages } from "../../data/servicePages";
+import { caseStudies } from "../../data/caseStudies";
 import { trackLead } from "../../utils/analytics";
 import Logo from "../ui/Logo";
 
@@ -25,6 +26,14 @@ export default function Footer() {
             {servicePages.map((service) => (
               <a href={service.path} key={service.path}>
                 {service.label}
+              </a>
+            ))}
+          </div>
+          <div>
+            <strong>Projetos</strong>
+            {caseStudies.map((project) => (
+              <a href={project.path} key={project.path}>
+                {project.name}
               </a>
             ))}
           </div>

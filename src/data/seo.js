@@ -1,6 +1,7 @@
 import { faqs } from "./faqs.js";
 import { servicePages } from "./servicePages.js";
 import { localPages } from "./localPages.js";
+import { caseStudies } from "./caseStudies.js";
 import { siteConfig } from "../config/site.js";
 
 export const siteUrl = siteConfig.url;
@@ -13,10 +14,15 @@ const organization = {
   logo: `${siteUrl}/digiup-symbol.svg`,
   image: `${siteUrl}/og.jpg`,
   description:
-    "Tech House especializada em presença digital, criação de sites, sistemas, plataformas e automações.",
-  email: `mailto:${siteConfig.email}`,
+    "Empresa de desenvolvimento web e software sediada em Brasília, DF. Cria sites profissionais, sistemas sob medida e automações para empresas em todo o Brasil.",
+  email: siteConfig.email,
   telephone: siteConfig.phoneE164,
-  areaServed: "BR",
+  areaServed: { "@type": "Country", name: "Brasil" },
+  location: {
+    "@type": "City",
+    name: "Brasília",
+    containedInPlace: { "@type": "AdministrativeArea", name: "Distrito Federal" },
+  },
   sameAs: siteConfig.socials.map((social) => social.href),
   founder: {
     "@type": "Person",
@@ -45,6 +51,7 @@ const website = {
   "@id": `${siteUrl}/#website`,
   url: `${siteUrl}/`,
   name: "DigiUP",
+  alternateName: "Digi UP",
   inLanguage: "pt-BR",
   publisher: { "@id": `${siteUrl}/#organization` },
 };
@@ -54,7 +61,7 @@ const homeRoute = {
   sitemapGroup: "pages",
   title: "DigiUP | Sites, Sistemas e Automações para Empresas",
   description:
-    "Criação de sites profissionais, sistemas sob medida e automações com IA para empresas de todo o Brasil. Tecnologia DigiUP para sua empresa crescer.",
+    "A DigiUP cria sites profissionais, sistemas sob medida e automações com IA. Sediada em Brasília, atende empresas em todo o Brasil.",
   ogDescription:
     "Sites profissionais, sistemas sob medida e automações com IA para empresas de todo o Brasil.",
   faqs,
@@ -81,11 +88,22 @@ export const seoRoutes = [
     serviceType: page.seo.serviceType,
     areaServed: page.seo.areaServed,
   })),
+  ...caseStudies.map((project) => ({
+    path: project.path,
+    sitemapGroup: "projects",
+    title: project.seo.title,
+    description: project.seo.description,
+    ogDescription: project.seo.description,
+    project,
+  })),
 ];
 
 export function buildStructuredData(route) {
   const pageUrl = route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}`;
   const pageId = `${pageUrl}#webpage`;
+  const primaryImage = route.project
+    ? { url: `${siteUrl}${route.project.image}`, width: 1400, height: 808 }
+    : { url: `${siteUrl}/og.jpg`, width: 3344, height: 1882 };
   const graph = [
     organization,
     website,
@@ -100,9 +118,7 @@ export function buildStructuredData(route) {
       about: { "@id": `${siteUrl}/#organization` },
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${siteUrl}/og.jpg`,
-        width: 3344,
-        height: 1882,
+        ...primaryImage,
       },
     },
   ];
@@ -134,6 +150,29 @@ export function buildStructuredData(route) {
           name: route.serviceType,
           item: pageUrl,
         },
+      ],
+    });
+  }
+
+  if (route.project) {
+    graph[2].mainEntity = { "@id": `${pageUrl}#project` };
+    graph.push({
+      "@type": "CreativeWork",
+      "@id": `${pageUrl}#project`,
+      name: route.project.name,
+      description: route.project.description,
+      url: pageUrl,
+      image: `${siteUrl}${route.project.image}`,
+      creator: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: { "@id": pageId },
+    });
+    graph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "DigiUP", item: `${siteUrl}/` },
+        { "@type": "ListItem", position: 2, name: "Projetos", item: `${siteUrl}/#case-study` },
+        { "@type": "ListItem", position: 3, name: route.project.name, item: pageUrl },
       ],
     });
   }

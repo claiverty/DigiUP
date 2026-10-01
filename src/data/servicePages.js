@@ -17,11 +17,16 @@ export const servicePages = [
       "Concentrar credibilidade, conteúdo e canais de contato",
     ],
     coverage: {
-      text: "Atendemos empresas em todo o Brasil. Quando o projeto pede uma conversa presencial, também conseguimos atender em",
+      text: "Atendemos empresas em todo o Brasil. Conheça nossas soluções em",
       links: [
         { label: "Brasília, DF", path: "/criacao-de-sites-em-brasilia/" },
         { label: "Formosa, GO", path: "/criacao-de-sites-em-formosa-go/" },
+        { label: "São Paulo, SP", path: "/criacao-de-sites-em-sao-paulo-sp/" },
       ],
+    },
+    projectLink: {
+      href: "/projetos/comercial-sagarana/",
+      label: "site e painel da Comercial Sagarana",
     },
     deliverables: [
       {
@@ -86,6 +91,10 @@ export const servicePages = [
     overviewTitle: "Quando a operação cresce, improvisos começam a custar caro.",
     overview:
       "Transformamos processos dispersos em uma solução centralizada, segura e simples de usar. Do levantamento das regras até a evolução do produto, tecnologia e experiência caminham juntas para apoiar o trabalho cotidiano.",
+    projectLink: {
+      href: "/projetos/digiticket/",
+      label: "plataforma de eventos DigiTicket",
+    },
     benefits: [
       "Centralizar informações e reduzir retrabalho",
       "Dar visibilidade a processos e indicadores",

@@ -1,4 +1,5 @@
 export default function CaseStudyCard({
+  path,
   name,
   eyebrow,
   image,
@@ -27,7 +28,7 @@ export default function CaseStudyCard({
 
       <div className="case-study-card__content">
         <div className="case-study-card__identity">
-          <p className="case-study-card__name">{name}</p>
+          <p className="case-study-card__name"><a href={path}>{name}</a></p>
           {eyebrow && <p className="case-study-card__eyebrow">{eyebrow}</p>}
         </div>
 

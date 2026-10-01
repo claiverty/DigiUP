@@ -82,6 +82,11 @@
   line-height: 1.15;
 }
 
+.case-study-card__name a:hover,
+.case-study-card__name a:focus-visible {
+  color: var(--accent-soft);
+}
+
 .case-study-card__eyebrow {
   margin: 7px 0 0;
   color: var(--accent-soft);

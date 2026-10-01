@@ -94,6 +94,10 @@ export const localPages = [
     overviewTitle: "Sua presença digital pode fazer mais do que apresentar a empresa.",
     overview:
       "Um site pode divulgar produtos e serviços; um sistema pode organizar tarefas da equipe; e uma automação pode conectar etapas do trabalho. A DigiUP planeja cada projeto conforme a necessidade do negócio. Em Formosa, o Comercial Sagarana é um exemplo de site público conectado a um painel administrativo para ofertas e vendas.",
+    projectLink: {
+      href: "/projetos/comercial-sagarana/",
+      label: "Comercial Sagarana em Formosa",
+    },
     benefits: [
       "Apresentar serviços, produtos e diferenciais com clareza",
       "Organizar tarefas e informações em ferramentas digitais próprias",
@@ -125,6 +129,10 @@ export const localPages = [
     overviewTitle: "Escolha a solução a partir da necessidade da operação.",
     overview:
       "Da presença digital à organização de processos internos, cada projeto começa pelo objetivo da empresa. O DigiTicket, plataforma desenvolvida em Brasília, reúne publicação de eventos, reservas, ingressos digitais e validação de entrada em um fluxo full-stack.",
+    projectLink: {
+      href: "/projetos/digiticket/",
+      label: "DigiTicket em Brasília",
+    },
     benefits: [
       "Explicar a oferta da empresa e abrir caminhos simples para contato",
       "Transformar processos internos em sistemas adequados ao fluxo do time",
@@ -138,8 +146,8 @@ export const localPages = [
       text:
         "O trabalho é remoto e está disponível em todos os 29 municípios goianos que integram a Região Integrada de Desenvolvimento do Distrito Federal e Entorno (RIDE-DF). Também atendemos empresas de outras regiões do país. A lista abaixo segue a composição oficial publicada pela Sudeco. Veja também o",
       link: {
-        href: "/criacao-de-sites-em-formosa-go/",
-        label: "projeto realizado para o Comercial Sagarana, em Formosa",
+        href: "/projetos/comercial-sagarana/",
+        label: "projeto da Comercial Sagarana, em Formosa",
       },
       source: {
         href: "https://www.gov.br/sudeco/pt-br/assuntos/ride-df",
@@ -173,6 +181,10 @@ export const localPages = [
     overviewTitle: "Uma experiência digital bem planejada conecta pessoas e processos.",
     overview:
       "A DigiUP trabalha da interface pública à lógica que sustenta o produto. O Ballon d’Or SPFC, desenvolvido para a comunidade do Discord Tricolor, organiza indicações, seleção de candidatos, votação por edição e publicação do histórico da premiação.",
+    projectLink: {
+      href: "/projetos/ballon-dor-spfc/",
+      label: "Ballon d’Or SPFC em São Paulo",
+    },
     benefits: [
       "Apresentar produtos e serviços com uma experiência clara",
       "Reunir etapas e regras de negócio em uma plataforma própria",

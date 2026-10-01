@@ -20,7 +20,7 @@ const template = stylesheetTags.length
 const { render } = await import(pathToFileURL(serverEntry).href);
 
 function escapeAttribute(value) {
-  return value
+  return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
     .replaceAll("<", "&lt;")
@@ -53,6 +53,16 @@ function applySeo(html, route) {
   output = setMeta(output, "property", "og:description", route.ogDescription);
   output = setMeta(output, "name", "twitter:title", route.title);
   output = setMeta(output, "name", "twitter:description", route.ogDescription);
+  if (route.project) {
+    const projectImage = `${siteUrl}${route.project.image}`;
+    output = setMeta(output, "property", "og:image", projectImage);
+    output = setMeta(output, "property", "og:image:secure_url", projectImage);
+    output = setMeta(output, "property", "og:image:width", 1400);
+    output = setMeta(output, "property", "og:image:height", 808);
+    output = setMeta(output, "property", "og:image:alt", route.project.imageAlt);
+    output = setMeta(output, "name", "twitter:image", projectImage);
+    output = setMeta(output, "name", "twitter:image:alt", route.project.imageAlt);
+  }
   output = setLink(output, "canonical", canonicalUrl);
   output = setLink(output, "alternate", canonicalUrl, "pt-BR");
   output = setLink(output, "alternate", canonicalUrl, "x-default");
@@ -82,7 +92,7 @@ for (const route of seoRoutes) {
 }
 
 const sitemapNamespace = "http://www.sitemaps.org/schemas/sitemap/0.9";
-const sitemapGroups = ["pages", "services", "locations"];
+const sitemapGroups = ["pages", "services", "locations", "projects"];
 const generatedSitemaps = [];
 
 for (const group of sitemapGroups) {

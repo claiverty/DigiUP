@@ -71,11 +71,17 @@ export default function ServicePage({ service }) {
                   {service.coverage.text}{" "}
                   {service.coverage.links.map((link, index) => (
                     <span key={link.path}>
-                      {index > 0 && " e "}
+                      {index > 0 &&
+                        (index === service.coverage.links.length - 1 ? " e " : ", ")}
                       <a href={link.path}>{link.label}</a>
                     </span>
                   ))}
                   .
+                </p>
+              )}
+              {service.projectLink && (
+                <p className="service-overview__coverage">
+                  Projeto relacionado: <a href={service.projectLink.href}>{service.projectLink.label}</a>.
                 </p>
               )}
             </div>
