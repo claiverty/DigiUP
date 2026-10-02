@@ -14,7 +14,7 @@ const organization = {
   logo: `${siteUrl}/digiup-symbol.svg`,
   image: `${siteUrl}/og.jpg`,
   description:
-    "Empresa de desenvolvimento web e software sediada em Brasília, DF. Cria sites profissionais, sistemas sob medida e automações para empresas em todo o Brasil.",
+    "Empresa de desenvolvimento web e software sediada em Brasília, DF. Cria sites, sistemas, automações com IA e integrações, com evolução e suporte para empresas em todo o Brasil.",
   email: siteConfig.email,
   telephone: siteConfig.phoneE164,
   areaServed: { "@type": "Country", name: "Brasil" },
@@ -43,6 +43,8 @@ const organization = {
     "Plataformas web",
     "Inteligência artificial",
     "Automações",
+    "Integrações de sistemas e APIs",
+    "Manutenção e suporte de sites e sistemas",
   ],
 };
 
@@ -61,9 +63,9 @@ const homeRoute = {
   sitemapGroup: "pages",
   title: "DigiUP | Sites, Sistemas e Automações para Empresas",
   description:
-    "A DigiUP cria sites profissionais, sistemas sob medida e automações com IA. Sediada em Brasília, atende empresas em todo o Brasil.",
+    "Sites, sistemas, automações com IA, integrações e suporte para empresas. A DigiUP é sediada em Brasília e atende todo o Brasil.",
   ogDescription:
-    "Sites profissionais, sistemas sob medida e automações com IA para empresas de todo o Brasil.",
+    "Sites, sistemas, automações com IA, integrações e suporte para empresas de todo o Brasil.",
   faqs,
 };
 
@@ -105,7 +107,7 @@ export function buildStructuredData(route) {
     ? { url: `${siteUrl}${route.project.image}`, width: 1400, height: 808 }
     : { url: `${siteUrl}/og.jpg`, width: 3344, height: 1882 };
   const graph = [
-    organization,
+    { ...organization },
     website,
     {
       "@type": "WebPage",
@@ -123,7 +125,32 @@ export function buildStructuredData(route) {
     },
   ];
 
+  if (route.path === "/") {
+    const catalogId = `${siteUrl}/#services`;
+    graph[0].hasOfferCatalog = { "@id": catalogId };
+    graph[2].mainEntity = { "@id": catalogId };
+    graph.push({
+      "@type": "OfferCatalog",
+      "@id": catalogId,
+      name: "Soluções da DigiUP",
+      itemListElement: servicePages.map((service) => ({
+        "@type": "Offer",
+        itemOffered: { "@id": `${siteUrl}${service.path}#service` },
+      })),
+    });
+    graph.push(...servicePages.map((service) => ({
+      "@type": "Service",
+      "@id": `${siteUrl}${service.path}#service`,
+      name: service.seo.serviceType,
+      description: service.seo.description,
+      url: `${siteUrl}${service.path}`,
+      areaServed: "BR",
+      provider: { "@id": `${siteUrl}/#organization` },
+    })));
+  }
+
   if (route.serviceType) {
+    graph[2].mainEntity = { "@id": `${pageUrl}#service` };
     graph.push({
       "@type": "Service",
       "@id": `${pageUrl}#service`,

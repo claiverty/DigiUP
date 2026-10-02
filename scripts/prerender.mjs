@@ -45,7 +45,7 @@ function setLink(html, relation, href, hreflang) {
 function applySeo(html, route) {
   const canonicalUrl =
     route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}`;
-  let output = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${route.title}</title>`);
+  let output = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeAttribute(route.title)}</title>`);
 
   output = setMeta(output, "name", "description", route.description);
   output = setMeta(output, "property", "og:url", canonicalUrl);
@@ -57,6 +57,8 @@ function applySeo(html, route) {
     const projectImage = `${siteUrl}${route.project.image}`;
     output = setMeta(output, "property", "og:image", projectImage);
     output = setMeta(output, "property", "og:image:secure_url", projectImage);
+    const imageType = route.project.image.endsWith(".webp") ? "image/webp" : "image/jpeg";
+    output = setMeta(output, "property", "og:image:type", imageType);
     output = setMeta(output, "property", "og:image:width", 1400);
     output = setMeta(output, "property", "og:image:height", 808);
     output = setMeta(output, "property", "og:image:alt", route.project.imageAlt);
@@ -67,7 +69,7 @@ function applySeo(html, route) {
   output = setLink(output, "alternate", canonicalUrl, "pt-BR");
   output = setLink(output, "alternate", canonicalUrl, "x-default");
 
-  const structuredData = JSON.stringify(buildStructuredData(route), null, 2);
+  const structuredData = JSON.stringify(buildStructuredData(route), null, 2).replaceAll("<", "\\u003c");
   return output.replace(
     /<script type="application\/ld\+json">[\s\S]*?<\/script>/i,
     `<script type="application/ld+json">\n${structuredData}\n    </script>`,
@@ -128,6 +130,33 @@ const sitemapIndex = [
   "",
 ].join("\n");
 await writeFile(path.join(distDirectory, "sitemap.xml"), sitemapIndex, "utf8");
+
+// A plain-text directory complements the public HTML; it is not an indexing signal.
+const llmsDirectory = [
+  "# DigiUP",
+  "",
+  "> Empresa de desenvolvimento web e software sediada em Brasília, DF, com atendimento em todo o Brasil. Sites, sistemas sob medida, automações com IA, integrações e APIs, evolução e suporte.",
+  "",
+  `Site oficial: ${siteUrl}/`,
+  "",
+  ...[
+    ["Soluções", "services"],
+    ["Projetos", "projects"],
+    ["Atendimento regional", "locations"],
+  ].flatMap(([heading, group]) => [
+    `## ${heading}`,
+    "",
+    ...seoRoutes.filter((route) => route.sitemapGroup === group).map((route) =>
+      `- [${route.title}](${siteUrl}${route.path}): ${route.description}`,
+    ),
+    "",
+  ]),
+  "## Contato",
+  "",
+  `- [Falar com a DigiUP](${siteUrl}/#contato): canais de contato para conversar sobre um projeto.`,
+  "",
+].join("\n");
+await writeFile(path.join(distDirectory, "llms.txt"), llmsDirectory, "utf8");
 
 await rm(path.join(projectRoot, ".prerender"), { recursive: true, force: true });
 console.log(`Prerender concluído: ${seoRoutes.length} páginas.`);

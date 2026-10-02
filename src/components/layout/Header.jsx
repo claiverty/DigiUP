@@ -1,5 +1,5 @@
+import ButtonWords from "../ui/ButtonWords";
 import { siteConfig } from "../../config/site";
-import Logo from "../ui/Logo";
 import { trackLead } from "../../utils/analytics";
 
 export default function Header() {
@@ -7,47 +7,40 @@ export default function Header() {
     <header className="site-header">
       <div className="nav-shell">
         <a href="/" aria-label="DigiUP — início" className="brand-link">
-          <Logo />
+          <img src="/digiup-symbol.svg" alt="" width="36" height="36" />
         </a>
 
-        <nav className="desktop-nav" aria-label="Navegação principal">
-          {siteConfig.navigation.map((item) => (
-            <a href={item.href} key={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        <div className="nav-controls">
+          <details className="site-menu">
+            <summary>
+              <span className="site-menu__icon" aria-hidden="true">
+                <i />
+                <i />
+              </span>
+              <span>Menu</span>
+            </summary>
+            <nav className="site-menu__panel" aria-label="Navegação principal">
+              {siteConfig.navigation.map((item) => (
+                <a
+                  href={item.href}
+                  key={item.href}
+                  onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </details>
 
-        <a
-          className="nav-cta"
-          href="/#contato"
-          onClick={() => trackLead("header_contact")}
-        >
-          Fale com a DigiUP
-          <svg className="nav-cta__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M5 12h14m-6-6 6 6-6 6" />
-          </svg>
-        </a>
-
-        <details className="mobile-nav">
-          <summary aria-label="Abrir menu">
-            <span className="mobile-nav__icon" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </span>
-          </summary>
-          <nav aria-label="Navegação móvel">
-            {siteConfig.navigation.map((item) => (
-              <a href={item.href} key={item.href}>
-                {item.label}
-              </a>
-            ))}
-            <a href="/#contato" onClick={() => trackLead("mobile_menu_contact")}>
-              Iniciar projeto
-            </a>
-          </nav>
-        </details>
+          <a
+            className="nav-cta hero-button"
+            aria-label="Falar com a DigiUP"
+            href="/#contato"
+            onClick={() => trackLead("header_contact")}
+          >
+            <ButtonWords text="Falar com a DigiUP" />
+          </a>
+        </div>
       </div>
     </header>
   );

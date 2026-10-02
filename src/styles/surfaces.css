@@ -1,0 +1,58 @@
+/* Shared edge treatment for the site's major surfaces. */
+.statement,
+.showcase-card,
+.concept-cases__panel,
+.contact__inner,
+.project-page__image-frame,
+.service-fit__panel,
+.service-process,
+.service-deliverables article,
+.project-page__features > div,
+.case-study-card,
+.service-row {
+  border: 1px solid var(--surface-edge);
+  border-top-color: var(--surface-edge-top);
+  border-radius: var(--surface-radius);
+  box-shadow: var(--surface-shadow);
+}
+
+.service-deliverables article,
+.project-page__features > div {
+  border-radius: var(--surface-radius-small);
+}
+
+.case-study-card {
+  --case-card-radius: var(--surface-radius-feature);
+  border-radius: var(--case-card-radius);
+}
+
+.case-study-card__image-wrap {
+  border-color: var(--surface-edge);
+}
+
+.brand-link,
+.nav-controls,
+.site-menu__panel {
+  border-color: var(--surface-edge);
+  border-top-color: var(--surface-edge-top);
+  box-shadow: var(--surface-shadow);
+}
+
+.site-menu__panel {
+  border-radius: var(--surface-radius-small);
+}
+
+.service-row[data-reached="true"] {
+  border-color: rgba(0, 111, 232, 0.2);
+  border-top-color: rgba(0, 111, 232, 0.32);
+  box-shadow: var(--surface-shadow);
+}
+
+@media (max-width: 600px) {
+  :root {
+    --surface-radius: 24px;
+    --surface-radius-small: 18px;
+    --surface-radius-feature: 28px;
+  }
+  .services__track { left: 25px; }
+}

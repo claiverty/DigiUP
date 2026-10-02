@@ -43,8 +43,9 @@ export default function AboutSection() {
           <div className="about__body">
             <p>
               A DigiUP é uma empresa de desenvolvimento web e software sediada
-              em Brasília, DF. Criamos sites profissionais, sistemas sob medida
-              e automações para empresas em todo o Brasil.
+              em Brasília, DF. Criamos sites profissionais, sistemas sob medida,
+              automações com IA e integrações para empresas em todo o Brasil,
+              com evolução e suporte para acompanhar a operação.
             </p>
             <p>
               Sem camadas desnecessárias. Sem tecnologia por vaidade. Com clareza

@@ -93,9 +93,14 @@ O build gera HTML completo para a página inicial e para as rotas:
 - `/criacao-de-sites/`
 - `/sistemas-sob-medida/`
 - `/automacoes-e-ia/`
+- `/integracoes-e-apis/`
+- `/evolucao-e-suporte/`
 - `/criacao-de-sites-em-formosa-go/`
 - `/criacao-de-sites-em-brasilia/`
 - `/criacao-de-sites-em-sao-paulo-sp/`
+- `/projetos/ballon-dor-spfc/`
+- `/projetos/comercial-sagarana/`
+- `/projetos/digiticket/`
 
 ### Visualizar o build
 
@@ -113,7 +118,14 @@ npm run preview
 - Conteúdo das páginas regionais: `src/data/localPages.js`
 - Portfólio de projetos publicados: `src/data/projects.js`
 - Metadados e dados estruturados: `src/data/seo.js`
-- Grupos dos sitemaps: cada rota em `src/data/seo.js` recebe um `sitemapGroup` (`pages`, `services` ou `locations`). O build gera os arquivos XML e o índice `/sitemap.xml` a partir dessas rotas.
+- Grupos dos sitemaps: cada rota em `src/data/seo.js` recebe um `sitemapGroup` (`pages`, `services`, `locations` ou `projects`). O build gera os arquivos XML e o índice `/sitemap.xml` a partir dessas rotas.
+- SEO, AEO e GEO: o build gera títulos, descrições, URLs canônicas, previews sociais e dados estruturados por página. O catálogo dos cinco serviços e as FAQs refletem o conteúdo visível. `/llms.txt` é um diretório complementar gerado dessas mesmas rotas, sem substituir o HTML ou o sitemap.
+
+## Após publicar alterações de SEO
+
+- Publicar o conteúdo de `dist`, com as páginas pré-renderizadas e os sitemaps gerados.
+- Inspecionar as novas URLs no Google Search Console e no Bing Webmaster Tools e solicitar indexação após o deploy.
+- Acompanhar cobertura, consultas e citações disponíveis nas ferramentas. O código preparado para rastreamento não garante indexação, posição ou recomendação por assistentes de IA.
 - Rolagem e animações de entrada: `src/hooks/`
 - Identidade visual e cores: `src/styles/variables.css`
 - Ativos da marca: `public/`

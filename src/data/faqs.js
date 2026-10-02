@@ -7,7 +7,7 @@ export const faqs = [
   {
     question: "Vocês criam apenas sites ou também sistemas e automações?",
     answer:
-      "Criamos sites, sistemas, plataformas e automações completas. A experiência do usuário faz parte de cada solução, mas não oferecemos branding ou design como serviços separados.",
+      "A DigiUP cria sites profissionais, sistemas sob medida e automações com IA. Também desenvolve integrações e APIs e oferece manutenção, evolução e suporte de sites e sistemas. A experiência do usuário faz parte de cada solução.",
   },
   {
     question: "Minha empresa ainda não tem site. Vocês cuidam de tudo?",
@@ -18,6 +18,21 @@ export const faqs = [
     question: "Como a inteligência artificial entra nos projetos?",
     answer:
       "A IA pode estar no produto, na operação ou no processo de criação. Só aplicamos quando há ganho real de eficiência, experiência ou capacidade — nunca como enfeite.",
+  },
+  {
+    question: "A DigiUP atende empresas de quais regiões?",
+    answer:
+      "A DigiUP é sediada em Brasília, DF, e atende empresas em todo o Brasil. O projeto pode ser conduzido remotamente, com escopo, etapas e canais de acompanhamento definidos em conjunto.",
+  },
+  {
+    question: "Vocês conectam sistemas e ferramentas que minha empresa já usa?",
+    answer:
+      "Sim. Avaliamos as APIs, as permissões e as limitações das ferramentas para definir as integrações viáveis. Podemos conectar sistemas, dados e provedores de pagamento conforme os recursos disponíveis e o escopo do projeto.",
+  },
+  {
+    question: "A DigiUP oferece manutenção e suporte depois da entrega?",
+    answer:
+      "Sim. Podemos organizar manutenção, correções e evolução por demanda ou acompanhamento recorrente. O escopo, os canais de atendimento e os prazos são definidos na proposta, conforme a necessidade da empresa.",
   },
   {
     question: "Como funciona o primeiro contato?",

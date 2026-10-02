@@ -1,3 +1,4 @@
+import ButtonWords from "../ui/ButtonWords";
 import Arrow from "../ui/Arrow";
 import ArrowIcon from "../ui/ArrowIcon";
 import { trackLead } from "../../utils/analytics";
@@ -35,17 +36,18 @@ export default function HeroSection() {
 
         <div className="hero__actions reveal reveal--3">
           <a
-            className="button button--light"
+            className="button button--light hero-button"
+            aria-label="Quero tirar meu projeto do papel"
             href="#contato"
             onClick={() => trackLead("home_hero")}
           >
-            Quero tirar meu projeto do papel <Arrow />
+            <ButtonWords text="Quero tirar meu projeto do papel" /> <Arrow />
           </a>
-          <a className="button button--glass" href="#solucoes">
-              Ver como fazemos{" "}
-              <span className="button__circle" aria-hidden="true">
-                <ArrowIcon direction="down" />
-              </span>
+          <a className="button button--glass hero-button" href="#solucoes" aria-label="Ver como fazemos">
+            <ButtonWords text="Ver como fazemos" />
+            <span className="button__circle" aria-hidden="true">
+              <ArrowIcon direction="down" />
+            </span>
           </a>
         </div>
       </div>

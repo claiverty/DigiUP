@@ -8,6 +8,12 @@
   --faint: #7d7d87;
   --line: rgba(255, 255, 255, 0.11);
   --line-soft: rgba(255, 255, 255, 0.065);
+  --surface-edge: rgba(255, 255, 255, 0.085);
+  --surface-edge-top: rgba(255, 255, 255, 0.16);
+  --surface-radius: 40px;
+  --surface-radius-small: 24px;
+  --surface-radius-feature: clamp(40px, 5vw, 72px);
+  --surface-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045), 0 16px 48px rgba(0, 0, 0, 0.16);
   --accent-deep: #006fe8;
   --accent-mid: #006fe8;
   --accent: #006fe8;

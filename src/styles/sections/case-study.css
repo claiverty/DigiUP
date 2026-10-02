@@ -367,11 +367,15 @@
 
   .case-study-card__content {
     min-height: 0;
-    padding: 22px 20px 25px;
+    padding: 16px 18px 18px;
+  }
+
+  .case-study-card__story {
+    margin-top: 12px;
   }
 
   .case-study-card__name {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
   }
 
@@ -380,34 +384,42 @@
   }
 
   .case-study-card__title {
-    font-size: 27px;
+    font-size: 22px;
     font-weight: 500;
   }
 
   .case-study-card__description {
+    margin-top: 8px;
     font-size: 13px;
+    line-height: 1.5;
   }
 
   .case-study-card__metrics {
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin-top: 17px;
-    padding: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--line-soft);
   }
 
   .case-study-card__metric,
   .case-study-card__metric:first-child {
-    padding: 8px 0;
+    padding: 0;
     border: 0;
-    border-top: 1px solid var(--line-soft);
+  }
+
+  .case-study-card__metric dt {
+    font-size: 14px;
   }
 
   .case-study-card__metric dd {
     margin-top: 3px;
+    font-size: 11px;
   }
 
   .case-study-card__link {
-    margin-top: 15px;
+    min-height: 44px;
+    margin-top: 8px;
     font-size: 14px;
   }
 

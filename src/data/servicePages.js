@@ -221,6 +221,128 @@ export const servicePages = [
       serviceType: "Automação de processos e inteligência artificial",
     },
   },
+  {
+    "path": "/integracoes-e-apis/",
+    "label": "Integrações e APIs",
+    "title": "Integrações e APIs",
+    "titleAccent": "para conectar sua operação.",
+    "lead": "Conectamos sistemas, ferramentas e meios de pagamento para que as informações circulem entre as áreas e sua equipe trabalhe com menos tarefas manuais.",
+    "overviewTitle": "Suas ferramentas precisam trabalhar juntas.",
+    "overview": "A DigiUP avalia os sistemas que sua empresa já utiliza e desenvolve as conexões necessárias entre eles. Definimos quais dados devem circular, como tratar falhas e quais permissões cada integração precisa, respeitando as regras da operação.",
+    "benefits": [
+      "Reduzir digitação repetida e transferência manual de dados",
+      "Manter informações consistentes entre ferramentas",
+      "Conectar etapas comerciais, financeiras e operacionais"
+    ],
+    "deliverables": [
+      {
+        "title": "Integração entre sistemas",
+        "text": "Conexões entre plataformas, CRMs e ferramentas internas conforme as APIs e os recursos disponíveis."
+      },
+      {
+        "title": "APIs sob medida",
+        "text": "Interfaces para disponibilizar funções e dados do seu sistema com autenticação e permissões definidas."
+      },
+      {
+        "title": "Pagamentos e eventos",
+        "text": "Integração com provedores de pagamento e webhooks para atualizar etapas a partir de eventos recebidos."
+      },
+      {
+        "title": "Sincronização de dados",
+        "text": "Fluxos com validação, registros e tratamento de falhas para acompanhar a troca de informações."
+      }
+    ],
+    "idealFor": [
+      "Empresas que usam ferramentas sem conexão entre si",
+      "Equipes que copiam dados de um sistema para outro",
+      "Operações que precisam integrar pagamentos e pedidos",
+      "Plataformas que precisam disponibilizar ou consumir APIs"
+    ],
+    "faqs": [
+      {
+        "question": "É possível conectar as ferramentas que minha empresa já usa?",
+        "answer": "Avaliamos a documentação, as APIs, as permissões e as limitações de cada ferramenta. Com essas informações, definimos as conexões viáveis e o escopo da integração."
+      },
+      {
+        "question": "Vocês desenvolvem APIs para sistemas existentes?",
+        "answer": "Sim. Após avaliar o código e a estrutura do sistema, podemos desenvolver endpoints, autenticação e regras de acesso adequados às funções que precisam ser disponibilizadas."
+      },
+      {
+        "question": "A integração pode incluir pagamentos?",
+        "answer": "Sim, quando o provedor oferece os recursos necessários. O projeto define como iniciar pagamentos, receber notificações e atualizar os registros de acordo com as regras da operação."
+      },
+      {
+        "question": "O que acontece se uma ferramenta ficar indisponível?",
+        "answer": "Planejamos registros, alertas e estratégias de reprocessamento conforme o fluxo e os recursos das ferramentas. As regras de recuperação são definidas no escopo para reduzir perdas e duplicidades."
+      }
+    ],
+    "seo": {
+      "title": "Integrações de Sistemas e APIs para Empresas | DigiUP",
+      "description": "Conecte sistemas, ferramentas e pagamentos com integrações e APIs sob medida. Reduza tarefas manuais e centralize informações com a DigiUP.",
+      "serviceType": "Integrações de sistemas e desenvolvimento de APIs"
+    }
+  },
+  {
+    "path": "/evolucao-e-suporte/",
+    "label": "Evolução e suporte",
+    "title": "Evolução e suporte",
+    "titleAccent": "para acompanhar seu negócio.",
+    "lead": "Manutenção, correções e melhorias para que seu site ou sistema continue atendendo às necessidades da empresa depois da primeira entrega.",
+    "overviewTitle": "A tecnologia precisa acompanhar as mudanças da operação.",
+    "overview": "A DigiUP organiza as demandas de manutenção e evolução conforme o uso da solução. Avaliamos o estado do projeto, priorizamos ajustes e planejamos novas entregas com escopo definido, considerando as necessidades da equipe e dos clientes.",
+    "benefits": [
+      "Corrigir problemas que atrapalham o uso da solução",
+      "Adaptar funcionalidades às mudanças do negócio",
+      "Organizar melhorias e prioridades com acompanhamento técnico"
+    ],
+    "deliverables": [
+      {
+        "title": "Manutenção e correções",
+        "text": "Análise e resolução de problemas no site ou sistema, conforme o escopo e as prioridades acordados."
+      },
+      {
+        "title": "Evolução de funcionalidades",
+        "text": "Novos recursos e ajustes nos fluxos para acompanhar o uso da solução e as necessidades da empresa."
+      },
+      {
+        "title": "Atualizações técnicas",
+        "text": "Avaliação de dependências, compatibilidade e melhorias na base do projeto para planejar atualizações."
+      },
+      {
+        "title": "Acompanhamento técnico",
+        "text": "Organização de demandas, orientações e planejamento de entregas com canais e prazos combinados."
+      }
+    ],
+    "idealFor": [
+      "Empresas com sites ou sistemas que precisam de manutenção",
+      "Operações que precisam ajustar recursos já existentes",
+      "Produtos digitais com novas demandas de usuários",
+      "Equipes que precisam de apoio técnico para planejar melhorias"
+    ],
+    "faqs": [
+      {
+        "question": "Vocês atendem projetos desenvolvidos por outra empresa?",
+        "answer": "Podemos avaliar projetos existentes. Antes de assumir o trabalho, analisamos a tecnologia, o código disponível, os acessos e a documentação para definir a viabilidade e o escopo."
+      },
+      {
+        "question": "O acompanhamento pode ser contínuo?",
+        "answer": "Sim. Podemos organizar um acompanhamento recorrente ou demandas pontuais, conforme a necessidade do projeto. Atividades, canais de atendimento e prazos são definidos na proposta."
+      },
+      {
+        "question": "O suporte inclui novas funcionalidades?",
+        "answer": "Correções, manutenção e novos recursos são planejados conforme o escopo contratado. Demandas de evolução são avaliadas e priorizadas antes da implementação."
+      },
+      {
+        "question": "Como são definidos os prazos de atendimento?",
+        "answer": "Os prazos e a disponibilidade são combinados na contratação, de acordo com o tipo de demanda e a criticidade da operação. A proposta estabelece como solicitar e acompanhar o atendimento."
+      }
+    ],
+    "seo": {
+      "title": "Manutenção, Evolução e Suporte de Sites e Sistemas | DigiUP",
+      "description": "Manutenção de sites e sistemas, correções e novas funcionalidades. Conte com a DigiUP para planejar a evolução da tecnologia do seu negócio.",
+      "serviceType": "Manutenção, evolução e suporte de sites e sistemas"
+    }
+  },
 ];
 
 export function getServicePage(path) {
