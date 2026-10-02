@@ -10,8 +10,8 @@ export default function ContactSection() {
         <div className="contact__halo" aria-hidden="true" />
         <SectionLabel label="Seu projeto começa aqui" />
         <h2>
-          Vamos colocar seu
-          <em>próximo movimento no mundo?</em>
+          Vamos construir
+          <em>a solução certa para o seu negócio?</em>
         </h2>
         <p>
           Precisa criar sua presença digital, organizar uma operação ou automatizar

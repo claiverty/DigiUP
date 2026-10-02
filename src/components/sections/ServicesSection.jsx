@@ -1,5 +1,6 @@
 import { services } from "../../data/services";
 import Arrow from "../ui/Arrow";
+import ArrowIcon from "../ui/ArrowIcon";
 import SectionLabel from "../ui/SectionLabel";
 
 export default function ServicesSection() {
@@ -40,7 +41,7 @@ export default function ServicesSection() {
               href={service.href}
               aria-label={`Conhecer ${service.title}`}
             >
-              <span aria-hidden="true">↗</span>
+              <ArrowIcon />
             </a>
           </article>
         ))}

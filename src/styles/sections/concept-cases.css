@@ -1,7 +1,7 @@
 .concept-cases {
   overflow: hidden;
   background:
-    radial-gradient(circle at 84% 30%, rgba(0, 84, 218, 0.1), transparent 30%),
+    radial-gradient(circle at 84% 30%, rgba(0, 111, 232, 0.1), transparent 30%),
     #070708;
 }
 
@@ -47,8 +47,8 @@
       145deg,
       rgba(255, 255, 255, 0.065),
       rgba(255, 255, 255, 0.016) 40%,
-      rgba(0, 92, 230, 0.045) 72%,
-      rgba(0, 70, 184, 0.07)
+      rgba(0, 111, 232, 0.045) 72%,
+      rgba(0, 111, 232, 0.07)
     ),
     rgba(9, 10, 14, 0.76);
   box-shadow:
@@ -75,7 +75,7 @@
 
 .concept-case:hover {
   background:
-    radial-gradient(circle at 84% 22%, rgba(0, 101, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 84% 22%, rgba(0, 111, 232, 0.16), transparent 32%),
     rgba(255, 255, 255, 0.018);
 }
 

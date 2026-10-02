@@ -23,7 +23,10 @@ export default function Header() {
           href="/#contato"
           onClick={() => trackLead("header_contact")}
         >
-          Fale com a DigiUP <span aria-hidden="true">→</span>
+          Fale com a DigiUP
+          <svg className="nav-cta__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
         </a>
 
         <details className="mobile-nav">

@@ -39,8 +39,8 @@
       145deg,
       rgba(255, 255, 255, 0.065),
       rgba(255, 255, 255, 0.018) 38%,
-      rgba(0, 114, 255, 0.045) 68%,
-      rgba(0, 70, 184, 0.075)
+      rgba(0, 111, 232, 0.045) 68%,
+      rgba(0, 111, 232, 0.075)
     ),
     rgba(10, 10, 14, 0.72);
   box-shadow:
@@ -67,8 +67,8 @@
 
 .service-row:hover {
   background:
-    radial-gradient(circle at 83% 25%, rgba(0, 86, 218, 0.22), transparent 34%),
-    radial-gradient(circle at 65% 100%, rgba(0, 114, 255, 0.065), transparent 30%),
+    radial-gradient(circle at 83% 25%, rgba(0, 111, 232, 0.22), transparent 34%),
+    radial-gradient(circle at 65% 100%, rgba(0, 111, 232, 0.065), transparent 30%),
     rgba(255, 255, 255, 0.022);
 }
 
@@ -142,6 +142,15 @@
   color: var(--muted);
   font-family: var(--mono);
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.service-row__arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .service-row:hover .service-row__arrow {

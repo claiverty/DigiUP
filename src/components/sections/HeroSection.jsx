@@ -1,4 +1,5 @@
 import Arrow from "../ui/Arrow";
+import ArrowIcon from "../ui/ArrowIcon";
 import { trackLead } from "../../utils/analytics";
 
 export default function HeroSection() {
@@ -41,10 +42,10 @@ export default function HeroSection() {
             Quero tirar meu projeto do papel <Arrow />
           </a>
           <a className="button button--glass" href="#solucoes">
-            Ver como fazemos{" "}
-            <span className="button__circle" aria-hidden="true">
-              ↓
-            </span>
+              Ver como fazemos{" "}
+              <span className="button__circle" aria-hidden="true">
+                <ArrowIcon direction="down" />
+              </span>
           </a>
         </div>
       </div>
@@ -61,7 +62,7 @@ export default function HeroSection() {
 
       <a className="scroll-cue" href="#desafio" aria-label="Ir para a próxima seção">
         <span>Explore</span>
-        <i aria-hidden="true">↓</i>
+        <ArrowIcon direction="down" className="scroll-cue__icon" />
       </a>
     </section>
   );

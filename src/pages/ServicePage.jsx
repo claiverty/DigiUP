@@ -2,6 +2,7 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import ContactSection from "../components/sections/ContactSection";
 import Arrow from "../components/ui/Arrow";
+import ArrowIcon from "../components/ui/ArrowIcon";
 import SectionLabel from "../components/ui/SectionLabel";
 import { siteConfig } from "../config/site";
 import { serviceProcessSteps } from "../data/process";
@@ -46,7 +47,7 @@ export default function ServicePage({ service }) {
               <a className="button button--glass" href="#entregas">
                 Ver o que entregamos
                 <span className="button__circle" aria-hidden="true">
-                  ↓
+                  <ArrowIcon direction="down" />
                 </span>
               </a>
             </div>

@@ -1,4 +1,5 @@
 import { processSteps } from "../../data/process";
+import ArrowIcon from "../ui/ArrowIcon";
 import SectionLabel from "../ui/SectionLabel";
 
 export default function MethodSection() {
@@ -21,7 +22,7 @@ export default function MethodSection() {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </div>
-            <i aria-hidden="true">→</i>
+            <ArrowIcon direction="right" className="process-list__arrow" />
           </li>
         ))}
       </ol>

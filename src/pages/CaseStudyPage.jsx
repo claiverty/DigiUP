@@ -2,7 +2,6 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import ContactSection from "../components/sections/ContactSection";
 import SectionLabel from "../components/ui/SectionLabel";
-import Arrow from "../components/ui/Arrow";
 
 export default function CaseStudyPage({ project }) {
   return (
@@ -27,14 +26,6 @@ export default function CaseStudyPage({ project }) {
             <p className="project-page__headline">{project.title}</p>
             <p className="project-page__lead">{project.description}</p>
 
-            <div className="project-page__links">
-              <a className="button button--light" href={project.siteUrl} target="_blank" rel="noopener noreferrer">
-                Abrir projeto <Arrow />
-              </a>
-              <a className="project-page__text-link" href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
-                Ver código no GitHub <span aria-hidden="true">↗</span>
-              </a>
-            </div>
           </div>
         </section>
 
@@ -84,10 +75,15 @@ export default function CaseStudyPage({ project }) {
           <div className="section-container project-page__related-inner">
             <div>
               <SectionLabel label="O que fazemos" />
-              <h2 id="project-related-title">Um projeto real. Uma solução para cada contexto.</h2>
+              <h2 id="project-related-title">
+                Soluções digitais para diferentes desafios de negócio.
+              </h2>
             </div>
             <a className="project-page__text-link" href={project.relatedService.href}>
-              Conhecer {project.relatedService.label} <span aria-hidden="true">↗</span>
+              Conhecer {project.relatedService.label}
+              <svg className="project-page__text-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
             </a>
           </div>
         </section>

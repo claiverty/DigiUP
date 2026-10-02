@@ -1,4 +1,5 @@
 import SectionLabel from "../ui/SectionLabel";
+import ArrowIcon from "../ui/ArrowIcon";
 
 export default function ShowcaseSection() {
   return (
@@ -18,7 +19,9 @@ export default function ShowcaseSection() {
               <span>01 / Sites & presença digital</span>
               <h3>Sua empresa encontrada, compreendida e lembrada.</h3>
             </div>
-            <i aria-hidden="true">↗</i>
+            <span className="showcase-card__arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
           </div>
           <div className="product-window" aria-hidden="true">
             <div className="window__bar">
@@ -42,7 +45,7 @@ export default function ShowcaseSection() {
                 </div>
                 <div className="dashboard__hero">
                   <small>PROGRESSO DO PRODUTO</small>
-                  <strong>↑ Próxima escala</strong>
+                  <strong><ArrowIcon direction="up" className="dashboard__arrow" /> Próxima escala</strong>
                 </div>
                 <div className="dashboard__cards">
                   <span />
@@ -60,7 +63,9 @@ export default function ShowcaseSection() {
               <span>02 / Inteligência aplicada</span>
               <h3>Automação que trabalha com o seu time.</h3>
             </div>
-            <i aria-hidden="true">↗</i>
+            <span className="showcase-card__arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
           </div>
           <div className="ai-map" aria-hidden="true">
             <div className="ai-map__core">
@@ -83,12 +88,14 @@ export default function ShowcaseSection() {
               <span>03 / Experiência digital</span>
               <h3>Interfaces claras para pessoas usarem sem fricção.</h3>
             </div>
-            <i aria-hidden="true">↗</i>
+            <span className="showcase-card__arrow" aria-hidden="true">
+              <ArrowIcon />
+            </span>
           </div>
           <div className="brand-stage" aria-hidden="true">
             <p>FLUIDEZ</p>
             <em>experiência</em>
-            <strong>↑</strong>
+            <strong><ArrowIcon direction="up" className="brand-stage__arrow" /></strong>
             <span>DigiUP® / USER FIRST</span>
           </div>
         </article>

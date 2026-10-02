@@ -58,7 +58,7 @@
   border: 1px solid var(--line);
   border-radius: 28px;
   background:
-    radial-gradient(circle at 75% 40%, rgba(0, 74, 190, 0.28), transparent 35%),
+    radial-gradient(circle at 75% 40%, rgba(0, 111, 232, 0.28), transparent 35%),
     var(--panel);
 }
 

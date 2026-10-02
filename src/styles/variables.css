@@ -8,12 +8,12 @@
   --faint: #7d7d87;
   --line: rgba(255, 255, 255, 0.11);
   --line-soft: rgba(255, 255, 255, 0.065);
-  --accent-deep: #031e49;
-  --accent-mid: #0046b8;
+  --accent-deep: #006fe8;
+  --accent-mid: #006fe8;
   --accent: #006fe8;
-  --accent-soft: #65baff;
-  --accent-pale: #e6f5ff;
-  --sans: "Segoe UI Variable Display", "Segoe UI", Helvetica, Arial, sans-serif;
+  --accent-soft: #006fe8;
+  --accent-pale: rgba(0, 111, 232, 0.14);
+  --sans: "Geist Variable", "Geist", system-ui, sans-serif;
   --serif: Iowan Old Style, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
 }

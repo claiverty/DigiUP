@@ -1,7 +1,7 @@
 .method {
   background:
-    radial-gradient(circle at 15% 25%, rgba(0, 114, 255, 0.14), transparent 32%),
-    radial-gradient(circle at 90% 75%, rgba(3, 30, 73, 0.26), transparent 38%),
+    radial-gradient(circle at 15% 25%, rgba(0, 111, 232, 0.14), transparent 32%),
+    radial-gradient(circle at 90% 75%, rgba(0, 111, 232, 0.26), transparent 38%),
     #08090d;
   color: var(--white);
 }
@@ -51,7 +51,7 @@
 .process-list li:hover {
   padding: 0 24px;
   background:
-    linear-gradient(90deg, rgba(0, 114, 255, 0.09), rgba(255, 255, 255, 0.02));
+    linear-gradient(90deg, rgba(0, 111, 232, 0.09), rgba(255, 255, 255, 0.02));
 }
 
 .process-list li > span {
@@ -83,9 +83,12 @@
   line-height: 1.7;
 }
 
-.process-list i {
+.process-list__arrow {
+  width: 24px;
+  height: 24px;
   color: var(--accent-soft);
-  font-family: var(--mono);
-  font-size: 25px;
-  font-style: normal;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
