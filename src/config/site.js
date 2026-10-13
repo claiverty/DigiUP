@@ -1,4 +1,10 @@
 const phoneE164 = "+5561996419441";
+const defaultWhatsAppMessage =
+  "Olá! Vim pelo site da DigiUP e gostaria de conversar sobre um projeto.";
+
+export function getWhatsAppUrl(message = defaultWhatsAppMessage) {
+  return `https://wa.me/${phoneE164.replace("+", "")}?text=${encodeURIComponent(message)}`;
+}
 
 export const siteConfig = {
   name: "DigiUP",
@@ -11,7 +17,7 @@ export const siteConfig = {
     { label: "Instagram", href: "https://www.instagram.com/digiuptech/" },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/digiuptech/" },
   ],
-  whatsapp: `https://wa.me/${phoneE164.replace("+", "")}?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20DigiUP%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto.`,
+  whatsapp: getWhatsAppUrl(),
   navigation: [
     { label: "Soluções", href: "/#solucoes" },
     { label: "Método", href: "/#metodo" },

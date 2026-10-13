@@ -1,10 +1,14 @@
-import { siteConfig } from "../../config/site";
+import { getWhatsAppUrl, siteConfig } from "../../config/site";
 import Arrow from "../ui/Arrow";
 import ButtonWords from "../ui/ButtonWords";
 import SectionLabel from "../ui/SectionLabel";
 import { trackLead } from "../../utils/analytics";
 
-export default function ContactSection() {
+export default function ContactSection({ whatsappMessage }) {
+  const whatsappUrl = whatsappMessage
+    ? getWhatsAppUrl(whatsappMessage)
+    : siteConfig.whatsapp;
+
   return (
     <section className="contact section" id="contato">
       <div className="section-container contact__inner">
@@ -20,11 +24,13 @@ export default function ContactSection() {
         </p>
         <a
           className="button button--light button--large hero-button"
-          href={siteConfig.whatsapp}
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar com um especialista da DigiUP pelo WhatsApp"
-          onClick={() => trackLead("contact_whatsapp")}
+          onClick={() =>
+            trackLead(whatsappMessage ? "service_contact_whatsapp" : "contact_whatsapp")
+          }
         >
           <ButtonWords text="Falar com um especialista" /> <Arrow />
         </a>

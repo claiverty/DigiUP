@@ -14,15 +14,10 @@ const organization = {
   logo: `${siteUrl}/digiup-symbol.svg`,
   image: `${siteUrl}/og.jpg`,
   description:
-    "Empresa de desenvolvimento web e software sediada em Brasília, DF. Cria sites, sistemas, automações com IA e integrações, com evolução e suporte para empresas em todo o Brasil.",
+    "Empresa de desenvolvimento web e software que cresceu com projetos e conexões em Formosa e Brasília. Atende online empresas de todo o Brasil.",
   email: siteConfig.email,
   telephone: siteConfig.phoneE164,
   areaServed: { "@type": "Country", name: "Brasil" },
-  location: {
-    "@type": "City",
-    name: "Brasília",
-    containedInPlace: { "@type": "AdministrativeArea", name: "Distrito Federal" },
-  },
   sameAs: siteConfig.socials.map((social) => social.href),
   founder: {
     "@type": "Person",
@@ -63,9 +58,9 @@ const homeRoute = {
   sitemapGroup: "pages",
   title: "DigiUP | Sites, Sistemas e Automações para Empresas",
   description:
-    "Sites, sistemas, automações com IA, integrações e suporte para empresas. A DigiUP é sediada em Brasília e atende todo o Brasil.",
+    "Sites, sistemas, automações com IA, integrações e suporte para empresas. A DigiUP atende online todo o Brasil e cresceu com projetos em Formosa e Brasília.",
   ogDescription:
-    "Sites, sistemas, automações com IA, integrações e suporte para empresas de todo o Brasil.",
+    "Sites, sistemas, automações com IA, integrações e suporte online para empresas de todo o Brasil.",
   faqs,
 };
 

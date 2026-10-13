@@ -21,12 +21,13 @@
 
 .about h2 {
   max-width: 960px;
-  font-size: clamp(58px, 7.5vw, 106px);
+  font-size: clamp(52px, 6.3vw, 88px);
 }
 
 .about h2 em {
   margin-top: 8px;
   color: var(--accent-soft);
+  font-size: 0.9em;
 }
 
 .about__lead {

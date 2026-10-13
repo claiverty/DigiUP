@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "A DigiUP atende empresas de quais regiões?",
     answer:
-      "A DigiUP é sediada em Brasília, DF, e atende empresas em todo o Brasil. O projeto pode ser conduzido remotamente, com escopo, etapas e canais de acompanhamento definidos em conjunto.",
+      "A DigiUP cresceu com projetos e conexões em Formosa e Brasília e hoje atende online empresas de todo o Brasil. Definimos escopo, etapas e canais de acompanhamento conforme cada projeto.",
   },
   {
     question: "Vocês conectam sistemas e ferramentas que minha empresa já usa?",

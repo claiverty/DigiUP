@@ -17,7 +17,7 @@ export const servicePages = [
       "Concentrar credibilidade, conteúdo e canais de contato",
     ],
     coverage: {
-      text: "Atendemos empresas em todo o Brasil. Conheça nossas soluções em",
+      text: "Atendemos online empresas de todo o Brasil. Confira também nossas páginas para",
       links: [
         { label: "Brasília, DF", path: "/criacao-de-sites-em-brasilia/" },
         { label: "Formosa, GO", path: "/criacao-de-sites-em-formosa-go/" },

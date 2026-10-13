@@ -86,12 +86,13 @@ function makeFaqs(city) {
 export const localPages = [
   {
     path: "/criacao-de-sites-em-formosa-go/",
-    label: "Tecnologia para empresas em Formosa, GO",
-    title: "Sites, sistemas e automações",
-    titleAccent: "para Formosa, Goiás.",
+    label: "Criação de sites em Formosa, GO",
+    title: "Criação de sites",
+    titleAccent: "para empresas em Formosa.",
+    contactTopic: "criação de sites em Formosa",
     lead:
-      "A DigiUP desenvolve sites, sistemas sob medida e automações para empresas em Formosa e em todo o Brasil. Atendimento remoto, com o mesmo escopo de soluções em qualquer localidade.",
-    overviewTitle: "Sua presença digital pode fazer mais do que apresentar a empresa.",
+      "Desenvolvemos sites profissionais para empresas em Formosa e em todo o Brasil. O atendimento é remoto, e o projeto pode incluir sistemas sob medida e automações quando a operação precisa.",
+    overviewTitle: "Uma presença digital que apresenta e apoia a operação.",
     overview:
       "Um site pode divulgar produtos e serviços; um sistema pode organizar tarefas da equipe; e uma automação pode conectar etapas do trabalho. A DigiUP planeja cada projeto conforme a necessidade do negócio. Em Formosa, o Comercial Sagarana é um exemplo de site público conectado a um painel administrativo para ofertas e vendas.",
     projectLink: {
@@ -107,11 +108,10 @@ export const localPages = [
     idealFor: sharedIdealFor,
     faqs: makeFaqs("Formosa"),
     seo: {
-      title: "Sites, Sistemas e Automações em Formosa, GO | DigiUP",
+      title: "Criação de Sites em Formosa, GO | DigiUP",
       description:
-        "Sites, sistemas sob medida e automações para empresas em Formosa, GO. Veja o projeto do Comercial Sagarana e conheça o atendimento remoto da DigiUP.",
-      serviceType:
-        "Sites, sistemas sob medida e automações para empresas em Formosa, Goiás",
+        "Criação de sites profissionais para empresas em Formosa, GO, com atendimento remoto. Conheça o projeto do Comercial Sagarana, apresentado pela DigiUP.",
+      serviceType: "Criação de sites para empresas em Formosa, Goiás",
       areaServed: {
         "@type": "City",
         name: "Formosa",
@@ -121,11 +121,12 @@ export const localPages = [
   },
   {
     path: "/criacao-de-sites-em-brasilia/",
-    label: "Tecnologia para empresas em Brasília e no Entorno",
-    title: "Sites, sistemas e automações",
-    titleAccent: "para Brasília e região.",
+    label: "Criação de sites em Brasília e no Entorno",
+    title: "Criação de sites",
+    titleAccent: "para empresas em Brasília.",
+    contactTopic: "criação de sites em Brasília",
     lead:
-      "A DigiUP desenvolve sites, sistemas sob medida e automações para empresas em Brasília, no Entorno de Goiás e em todo o Brasil. Atendimento remoto, com o mesmo escopo de soluções em qualquer localidade.",
+      "Desenvolvemos sites profissionais para empresas em Brasília, no Entorno e em todo o Brasil. O atendimento é remoto, e o projeto pode incluir sistemas sob medida e automações quando a operação precisa.",
     overviewTitle: "Escolha a solução a partir da necessidade da operação.",
     overview:
       "Da presença digital à organização de processos internos, cada projeto começa pelo objetivo da empresa. O DigiTicket, plataforma desenvolvida em Brasília, reúne publicação de eventos, reservas, ingressos digitais e validação de entrada em um fluxo full-stack.",
@@ -156,11 +157,10 @@ export const localPages = [
       cities: rideGoiasCities,
     },
     seo: {
-      title: "Sites, Sistemas e Automações em Brasília | DigiUP",
+      title: "Criação de Sites em Brasília | DigiUP",
       description:
-        "Sites, sistemas sob medida e automações para empresas em Brasília e no Entorno de Goiás. Conheça o DigiTicket e o atendimento remoto da DigiUP em todo o Brasil.",
-      serviceType:
-        "Sites, sistemas sob medida e automações para empresas em Brasília e no Entorno",
+        "Criação de sites para empresas em Brasília e no Entorno, com atendimento remoto. Conheça a plataforma DigiTicket, apresentada pela DigiUP.",
+      serviceType: "Criação de sites para empresas em Brasília e no Entorno",
       areaServed: {
         "@type": "City",
         name: "Brasília",
@@ -173,11 +173,12 @@ export const localPages = [
   },
   {
     path: "/criacao-de-sites-em-sao-paulo-sp/",
-    label: "Tecnologia para empresas em São Paulo, SP",
-    title: "Sites, sistemas e automações",
-    titleAccent: "para São Paulo, SP.",
+    label: "Criação de sites em São Paulo, SP",
+    title: "Criação de sites",
+    titleAccent: "para empresas em São Paulo.",
+    contactTopic: "criação de sites em São Paulo",
     lead:
-      "A DigiUP desenvolve sites, sistemas sob medida e automações para empresas em São Paulo e em todo o Brasil. Atendimento remoto, com o mesmo escopo de soluções em qualquer localidade.",
+      "Desenvolvemos sites profissionais para empresas em São Paulo e em todo o Brasil. O atendimento é remoto, e o projeto pode incluir sistemas sob medida e automações quando a operação precisa.",
     overviewTitle: "Uma experiência digital bem planejada conecta pessoas e processos.",
     overview:
       "A DigiUP trabalha da interface pública à lógica que sustenta o produto. O Ballon d’Or SPFC, desenvolvido para a comunidade do Discord Tricolor, organiza indicações, seleção de candidatos, votação por edição e publicação do histórico da premiação.",
@@ -194,11 +195,10 @@ export const localPages = [
     idealFor: sharedIdealFor,
     faqs: makeFaqs("São Paulo"),
     seo: {
-      title: "Sites, Sistemas e Automações em São Paulo | DigiUP",
+      title: "Criação de Sites em São Paulo, SP | DigiUP",
       description:
-        "Sites, sistemas sob medida e automações para empresas em São Paulo, SP. Conheça o projeto full-stack Ballon d’Or SPFC, desenvolvido pela DigiUP.",
-      serviceType:
-        "Sites, sistemas sob medida e automações para empresas em São Paulo, SP",
+        "Criação de sites para empresas em São Paulo, SP, com atendimento remoto. Conheça a plataforma Ballon d’Or SPFC, apresentada pela DigiUP.",
+      serviceType: "Criação de sites para empresas em São Paulo, SP",
       areaServed: {
         "@type": "City",
         name: "São Paulo",

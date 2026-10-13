@@ -4,11 +4,14 @@ import ContactSection from "../components/sections/ContactSection";
 import Arrow from "../components/ui/Arrow";
 import ArrowIcon from "../components/ui/ArrowIcon";
 import SectionLabel from "../components/ui/SectionLabel";
-import { siteConfig } from "../config/site";
+import { getWhatsAppUrl } from "../config/site";
 import { serviceProcessSteps } from "../data/process";
 import { trackLead } from "../utils/analytics";
 
 export default function ServicePage({ service }) {
+  const contactTopic = service.contactTopic || service.title.toLowerCase();
+  const whatsappMessage = `Olá! Vim pela página de ${contactTopic} da DigiUP e gostaria de conversar sobre um projeto.`;
+
   return (
     <>
       <a className="skip-link" href="#conteudo">
@@ -37,7 +40,7 @@ export default function ServicePage({ service }) {
             <div className="service-hero__actions">
               <a
                 className="button button--light"
-                href={siteConfig.whatsapp}
+                href={getWhatsAppUrl(whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackLead(`service_${service.path}_whatsapp`)}
@@ -193,7 +196,7 @@ export default function ServicePage({ service }) {
           </div>
         </section>
 
-        <ContactSection />
+        <ContactSection whatsappMessage={whatsappMessage} />
       </main>
 
       <Footer />

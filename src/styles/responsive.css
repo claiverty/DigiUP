@@ -206,11 +206,6 @@
     gap: 14px;
   }
 
-  .showcase-card__arrow {
-    width: 32px;
-    height: 32px;
-  }
-
   .product-window {
     right: -30px;
     bottom: -50px;
@@ -290,13 +285,9 @@
 
   .process-list li {
     min-height: auto;
-    grid-template-columns: 40px 1fr auto;
+    grid-template-columns: 40px 1fr;
     gap: 12px;
     padding: 26px 0;
-  }
-
-  .process-list li:hover {
-    padding: 26px 10px;
   }
 
   .process-list li > div {

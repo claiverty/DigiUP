@@ -10,6 +10,10 @@ export default function ShowcaseSection() {
           Da estratégia ao produto.
           <em>Sem perder a essência no caminho.</em>
         </h2>
+        <p className="showcase__note">
+          Os visuais abaixo são demonstrações. Os projetos desenvolvidos pela
+          DigiUP são apresentados em “Projetos em destaque”.
+        </p>
       </div>
 
       <div className="section-container showcase__grid">
@@ -19,9 +23,6 @@ export default function ShowcaseSection() {
               <span>01 / Sites & presença digital</span>
               <h3>Sua empresa encontrada, compreendida e lembrada.</h3>
             </div>
-            <span className="showcase-card__arrow" aria-hidden="true">
-              <ArrowIcon />
-            </span>
           </div>
           <div className="product-window" aria-hidden="true">
             <div className="window__bar">
@@ -63,9 +64,6 @@ export default function ShowcaseSection() {
               <span>02 / Inteligência aplicada</span>
               <h3>Automação que trabalha com o seu time.</h3>
             </div>
-            <span className="showcase-card__arrow" aria-hidden="true">
-              <ArrowIcon />
-            </span>
           </div>
           <div className="ai-map" aria-hidden="true">
             <div className="ai-map__core">
@@ -88,9 +86,6 @@ export default function ShowcaseSection() {
               <span>03 / Experiência digital</span>
               <h3>Interfaces claras para pessoas usarem sem fricção.</h3>
             </div>
-            <span className="showcase-card__arrow" aria-hidden="true">
-              <ArrowIcon />
-            </span>
           </div>
           <div className="brand-stage" aria-hidden="true">
             <p>FLUIDEZ</p>

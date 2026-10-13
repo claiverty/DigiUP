@@ -41,17 +41,10 @@
 .process-list li {
   display: grid;
   min-height: 150px;
-  grid-template-columns: 120px 1fr 50px;
+  grid-template-columns: 120px 1fr;
   gap: 30px;
   align-items: center;
   border-bottom: 1px solid var(--line);
-  transition: padding 220ms ease, background 220ms ease;
-}
-
-.process-list li:hover {
-  padding: 0 24px;
-  background:
-    linear-gradient(90deg, rgba(0, 111, 232, 0.09), rgba(255, 255, 255, 0.02));
 }
 
 .process-list li > span {
@@ -81,14 +74,4 @@
   color: var(--muted);
   font-size: 14px;
   line-height: 1.7;
-}
-
-.process-list__arrow {
-  width: 24px;
-  height: 24px;
-  color: var(--accent-soft);
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
 }

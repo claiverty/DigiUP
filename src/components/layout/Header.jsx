@@ -1,8 +1,34 @@
+import { useEffect, useRef } from "react";
 import ButtonWords from "../ui/ButtonWords";
 import { siteConfig } from "../../config/site";
 import { trackLead } from "../../utils/analytics";
 
 export default function Header() {
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const closeOnOutsidePointer = (event) => {
+      if (menuRef.current?.open && !menuRef.current.contains(event.target)) {
+        menuRef.current.open = false;
+      }
+    };
+
+    const closeOnEscape = (event) => {
+      if (event.key !== "Escape" || !menuRef.current?.open) return;
+
+      menuRef.current.open = false;
+      menuRef.current.querySelector("summary")?.focus();
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsidePointer);
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsidePointer);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
+
   return (
     <header className="site-header">
       <div className="nav-shell">
@@ -11,7 +37,7 @@ export default function Header() {
         </a>
 
         <div className="nav-controls">
-          <details className="site-menu">
+          <details className="site-menu" ref={menuRef}>
             <summary>
               <span className="site-menu__icon" aria-hidden="true">
                 <i />
@@ -34,8 +60,10 @@ export default function Header() {
 
           <a
             className="nav-cta hero-button"
-            aria-label="Falar com a DigiUP"
-            href="/#contato"
+            aria-label="Falar com a DigiUP pelo WhatsApp"
+            href={siteConfig.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => trackLead("header_contact")}
           >
             <ButtonWords text="Falar com a DigiUP" />
