@@ -50,7 +50,7 @@ export default function useScrollReveal(path) {
       const position = sectionCounters.get(section) || 0;
 
       element.classList.add("scroll-reveal");
-      element.style.setProperty("--scroll-reveal-delay", `${Math.min(position, 4) * 75}ms`);
+      element.style.setProperty("--scroll-reveal-delay", `${Math.min(position, 4) * 35}ms`);
       sectionCounters.set(section, position + 1);
     });
 
@@ -64,8 +64,8 @@ export default function useScrollReveal(path) {
         });
       },
       {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.08,
+        rootMargin: "0px 0px 8% 0px",
+        threshold: 0.02,
       },
     );
 
